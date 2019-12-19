@@ -1,5 +1,5 @@
-import { g } from './chart-area';
-import { x, y, area, continentColor } from './scales';
+import { g } from './chart-area.js';
+import { x, y, area, continentColor } from './scales.js';
 
 // ============================= Labels ===================================
 

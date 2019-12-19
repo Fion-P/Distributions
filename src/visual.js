@@ -1,20 +1,26 @@
 // ============================= Data ===================================
 
-export const visual = d3.json("data/data.json").then((data) => {
+export const Visual = () => {
+  console.log("hello")
+  d3.json("data/data.json").then((data) => {
+    // console.log(data);
 
-  data.forEach(d => {
-    d.countries.forEach(c => {
-      c.income = +c.income;
+    // changes data from string to integer
+    data.forEach(d => {
+      d.countries.forEach(c => {
+        c.income = +c.income;
+      });
+      d.year = +d.year;
     });
-    d.year = +d.year;
-  });
-  // Does the same as the .map before
 
-  const formattedData = data.map(year => {
-    return year["countries"].filter(function (country) {
-      let dataExists = (country.income && country.life_exp);
-      return dataExists
-    })
-  });
+    // formats data to get rid of null values
+    const formattedData = data.map(year => {
+      return year["countries"].filter(country => {
+        let dataExists = (country.income && country.life_exp);
+        return dataExists;
+      })
+    });
 
-});
+    // console.log(formattedData);
+  });
+};

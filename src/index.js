@@ -1,5 +1,7 @@
 console.log("webpack is working")
 
-window.addEventListener('DOMContentLoaded', () => {
-  
+import { Visual } from './visual.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  Visual();
 });
