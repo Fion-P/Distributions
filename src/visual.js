@@ -23,7 +23,15 @@ export const Visual = () => {
       })
     });
 
+    let i = 0
+
+    d3.interval(() => {
+      // At the end of our data, loop back
+      i = (i < 214) ? i + 1 : 0;
+      update(formattedData[i], i);
+    }, 100);
+    
     update(formattedData[0], 0);
-    // console.log(formattedData);
+ 
   });
 };
