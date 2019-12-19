@@ -1,6 +1,6 @@
 import { g } from './chart-area.js';
-import { x, y, area, continentColor } from './scales.js';
-
+import { x, y } from './scales.js';
+import { width, height } from './chart-area.js';
 // ============================= Labels ===================================
 
 const xLabel = g.append("text")
@@ -39,7 +39,7 @@ g.append("g")
 // Y Axis
 export const yAxisCall = d3.axisLeft(y)
   .ticks(10)
-  .tickFormat(d => { return +d; });
+  .tickFormat(d => { return + d; });
 g.append("g")
   .attr("class", "y-axis")
   .call(yAxisCall);

@@ -1,3 +1,5 @@
+import { width, height } from './chart-area.js';
+
 // X Scale
 export const x = d3.scaleLog()
   .domain([142, 150000])

@@ -1,3 +1,5 @@
+import { update } from './update.js';
+
 // ============================= Data ===================================
 
 export const Visual = () => {
@@ -21,6 +23,7 @@ export const Visual = () => {
       })
     });
 
+    update(formattedData[0], 0);
     // console.log(formattedData);
   });
 };
