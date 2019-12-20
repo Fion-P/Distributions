@@ -1,6 +1,7 @@
 import { g } from './chart-area.js';
 import { x, y, area, continentColor } from './scales.js';
 import { timeLabel, xAxisCall, yAxisCall } from './labels+axes.js';
+import { tip } from './tooltip.js'
 
 export const update = (data, time) => {
   const t = d3.transition().duration(100);
@@ -14,6 +15,8 @@ export const update = (data, time) => {
 
   circles.enter()
     .append("circle")
+      .on("mouseover", tip.show)
+      .on("mouseout", tip.hide)
       .merge(circles)
       .transition(t)
         .attr("fill", function (d) { return continentColor(d.continent); })

@@ -1,10 +1,8 @@
 import { update } from './update.js';
 import { legend } from './legend.js';
-import { tooltip } from './tooltip.js';
 
 export const Visual = () => {
   legend;
-  tooltip;
 
   d3.json("data/data.json").then((data) => {
 
@@ -26,11 +24,11 @@ export const Visual = () => {
 
     let i = 0
 
-    // d3.interval(() => {
+    d3.interval(() => {
       // At the end of our data, loop back
       i = (i < 214) ? i + 1 : 0;
-    //   update(formattedData[i], i);
-    // }, 100);
+      update(formattedData[i], i);
+    }, 100);
 
     update(formattedData[0], 0);
  
