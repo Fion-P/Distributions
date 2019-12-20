@@ -1,5 +1,7 @@
 const margin = { left: 80, right: 20, top: 50, bottom: 100 };
 
+// export let formattedData;
+
 export const width = 800 - margin.left - margin.right;
 export const height = 500 - margin.top - margin.bottom;
 

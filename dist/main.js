@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/buttons.js":
+/*!************************!*\
+  !*** ./src/buttons.js ***!
+  \************************/
+/*! exports provided: play */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"play\", function() { return play; });\n/* harmony import */ var _visual__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./visual */ \"./src/visual.js\");\n\n\nlet interval;\n\nconst play = () => {\n  const playButton = document.getElementById(\"play-button\");\n\n  console.log(playButton.textContent);\n\n  playButton.addEventListener(\"click\", (e) => {\n    if (playButton.textContent === \"Play\") {\n      playButton.textContent = \"Pause\";\n      interval = setInterval(_visual__WEBPACK_IMPORTED_MODULE_0__[\"step\"], 100);\n    } else if (playButton.textContent === \"Pause\") {\n      playButton.textContent = \"Play\";\n      clearInterval(interval);\n    }\n  });\n};\n\n\n\n//# sourceURL=webpack:///./src/buttons.js?");
+
+/***/ }),
+
 /***/ "./src/chart-area.js":
 /*!***************************!*\
   !*** ./src/chart-area.js ***!
@@ -94,7 +106,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"width\", function() { return width; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"height\", function() { return height; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"g\", function() { return g; });\nconst margin = { left: 80, right: 20, top: 50, bottom: 100 };\n\nconst width = 800 - margin.left - margin.right;\nconst height = 500 - margin.top - margin.bottom;\n\nconst g = d3.select(\"#chart-area\")\n  .append(\"svg\")\n  .attr(\"width\", width + margin.left + margin.right)\n  .attr(\"height\", height + margin.top + margin.bottom)\n  .append(\"g\")\n  .attr(\"transform\", \"translate(\" + margin.left\n    + \", \" + margin.top + \")\");\n\n//# sourceURL=webpack:///./src/chart-area.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"width\", function() { return width; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"height\", function() { return height; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"g\", function() { return g; });\nconst margin = { left: 80, right: 20, top: 50, bottom: 100 };\n\n// export let formattedData;\n\nconst width = 800 - margin.left - margin.right;\nconst height = 500 - margin.top - margin.bottom;\n\nconst g = d3.select(\"#chart-area\")\n  .append(\"svg\")\n  .attr(\"width\", width + margin.left + margin.right)\n  .attr(\"height\", height + margin.top + margin.bottom)\n  .append(\"g\")\n  .attr(\"transform\", \"translate(\" + margin.left\n    + \", \" + margin.top + \")\");\n\n//# sourceURL=webpack:///./src/chart-area.js?");
 
 /***/ }),
 
@@ -174,11 +186,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!***********************!*\
   !*** ./src/visual.js ***!
   \***********************/
-/*! exports provided: Visual */
+/*! exports provided: Visual, step */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Visual\", function() { return Visual; });\n/* harmony import */ var _update_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update.js */ \"./src/update.js\");\n/* harmony import */ var _legend_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./legend.js */ \"./src/legend.js\");\n\n\n\nconst Visual = () => {\n  _legend_js__WEBPACK_IMPORTED_MODULE_1__[\"legend\"];\n\n  d3.json(\"data/data.json\").then((data) => {\n\n    // changes data from string to integer\n    data.forEach(d => {\n      d.countries.forEach(c => {\n        c.income = +c.income;\n      });\n      d.year = +d.year;\n    });\n\n    // formats data to get rid of null values\n    const formattedData = data.map(year => {\n      return year[\"countries\"].filter(country => {\n        let dataExists = (country.income && country.life_exp);\n        return dataExists;\n      })\n    });\n\n    let i = 0\n\n    d3.interval(() => {\n      // At the end of our data, loop back\n      i = (i < 214) ? i + 1 : 0;\n      Object(_update_js__WEBPACK_IMPORTED_MODULE_0__[\"update\"])(formattedData[i], i);\n    }, 100);\n\n    Object(_update_js__WEBPACK_IMPORTED_MODULE_0__[\"update\"])(formattedData[0], 0);\n \n  });\n};\n\n//# sourceURL=webpack:///./src/visual.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Visual\", function() { return Visual; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"step\", function() { return step; });\n/* harmony import */ var _update_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update.js */ \"./src/update.js\");\n/* harmony import */ var _legend_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./legend.js */ \"./src/legend.js\");\n/* harmony import */ var _buttons_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./buttons.js */ \"./src/buttons.js\");\n\n\n\n// import { formattedData } from './chart-area.js';\n\nlet formattedData;\nlet i = 0;\n\nconst Visual = () => {\n  _legend_js__WEBPACK_IMPORTED_MODULE_1__[\"legend\"];\n  \n  d3.json(\"data/data.json\").then((data) => {\n\n    // changes data from string to integer\n    data.forEach(d => {\n      d.countries.forEach(c => {\n        c.income = +c.income;\n      });\n      d.year = +d.year;\n    });\n    \n    // formats data to get rid of null values\n    formattedData = data.map(year => {\n      return year[\"countries\"].filter(country => {\n        let dataExists = (country.income && country.life_exp);\n        return dataExists;\n      })\n    });\n    \n    Object(_buttons_js__WEBPACK_IMPORTED_MODULE_2__[\"play\"])(formattedData);\n    // let i = 0\n\n    // d3.interval(() => {\n    //   // At the end of our data, loop back\n    //   i = (i < 214) ? i + 1 : 0;\n    //   update(formattedData[i], i);\n    // }, 100);\n\n    Object(_update_js__WEBPACK_IMPORTED_MODULE_0__[\"update\"])(formattedData[0], 0);\n \n  });\n};\n\nconst step = () => {\n  i = (i < 214) ? i + 1 : 0;\n  Object(_update_js__WEBPACK_IMPORTED_MODULE_0__[\"update\"])(formattedData[i], 0);\n};\n\n//# sourceURL=webpack:///./src/visual.js?");
 
 /***/ })
 
