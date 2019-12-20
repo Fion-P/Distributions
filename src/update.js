@@ -27,7 +27,9 @@ export const update = (data, time) => {
         .attr("cx", d => { return x(d.income) })
         .attr("r", d => {
           return Math.sqrt(area(d.population) / Math.PI);
-        });
+        })
+        .attr("stroke", "black")
+        .attr("stroke-width", "1px");
 
   timeLabel.text(+(time + 1800))
 };

@@ -10,3 +10,11 @@ export const g = d3.select("#chart-area")
   .append("g")
   .attr("transform", "translate(" + margin.left
     + ", " + margin.top + ")");
+
+const line = g.append("line")
+  .attr("x1", width)
+  .attr("y1", 0)
+  .attr("x2", 0)
+  .attr("y2", height)
+  .attr("stroke", "gray")
+  .attr("stroke-width", "1px");
