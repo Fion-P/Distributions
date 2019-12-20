@@ -44,3 +44,14 @@ export const yAxisCall = d3.axisLeft(y)
 g.append("g")
   .attr("class", "y-axis")
   .call(yAxisCall);
+
+
+// ============================= Linear Line ===================================
+
+const line = g.append("line")
+  .attr("x1", width)
+  .attr("y1", 0)
+  .attr("x2", 0.5)
+  .attr("y2", height - 0.5)
+  .attr("stroke", "#E0DEDE")
+  .attr("stroke-width", "1px");
