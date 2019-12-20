@@ -1,10 +1,13 @@
 import { g } from './chart-area.js';
 import { x, y, area, continentColor } from './scales.js';
 import { timeLabel, xAxisCall, yAxisCall } from './labels+axes.js';
-import { tip } from './tooltip.js'
+import { tip } from './tooltip.js';
+import { select } from './buttons.js'
 
 export const update = (data, time) => {
-  const t = d3.transition().duration(100);
+  const t = d3.transition().duration(150);
+
+  data = select(data);
 
   const circles = g.selectAll("circle")
     .data(data, d => {

@@ -12,9 +12,10 @@ export const play = (data) => {
   const playButton = document.getElementById("play-button");
 
   playButton.addEventListener("click", (e) => {
+
     if (playButton.textContent === "Play") {
       playButton.textContent = "Pause";
-      interval = setInterval(() => step(data), 100);
+      interval = setInterval(() => step(data), 150);
     } else if (playButton.textContent === "Pause") {
       playButton.textContent = "Play";
       clearInterval(interval);
@@ -30,9 +31,9 @@ const step = (data) => {
 
 // ============================= Reset ===================================
 
-export const reset = (data) => {
+const resetButton = document.getElementById("reset-button");
 
-  const resetButton = document.getElementById("reset-button");
+export const reset = (data) => {
 
   resetButton.addEventListener("click", (e) => {
     i = 0;
@@ -41,3 +42,28 @@ export const reset = (data) => {
 
 };
 
+
+// ============================= Reset ===================================
+
+const selector = document.getElementById("continent-select");
+
+export const select = (data) => {
+
+  let continent = selector.value;
+
+  data = data.filter(d => {
+    if (continent === "all") {
+      return true;
+    } else {
+      return d.continent === continent;
+    }
+  });
+
+  return data;
+};
+
+export const updateSelect = (data) => {
+  selector.addEventListener("change", () => {
+    update(data[i], i);
+  });
+};
