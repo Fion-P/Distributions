@@ -146,6 +146,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/tooltip.js":
+/*!************************!*\
+  !*** ./src/tooltip.js ***!
+  \************************/
+/*! exports provided: tip */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"tip\", function() { return tip; });\n/* harmony import */ var _chart_area_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chart-area.js */ \"./src/chart-area.js\");\n\n\nconst tip = d3.tip().attr('class', 'd3-tip') // class to match css\n  // set html with a function\n  .html(d => {\n    let text = \"<strong>Country:</strong> <span style='color: #2E4B69'>\" + d.country + \"</span><br>\";\n    text += \"<strong>Continent:</strong> <span style='color: #2E4B69; text-transform: capitalize'>\" + d.continent + \"</span><br>\";\n    text += \"<strong>Life Expectancy:</strong> <span style='color: #2E4B69'>\" + d3.format(\".2f\")(d.life_exp) + \"</span><br>\";\n    text += \"<strong>GDP Per Capita:</strong> <span style='color: #2E4B69'>\" + d3.format(\"($.2f\")(d.income) + \"</span><br>\";\n    text += \"<strong>Population:</strong> <span style='color: #2E4B69'>\" + d3.format(\",.0f\")(d.population) + \"</span><br>\";\n\n    return text;\n  });\n// #2E4B69\n// use call method to set context\n_chart_area_js__WEBPACK_IMPORTED_MODULE_0__[\"g\"].call(tip);\n\n\n//# sourceURL=webpack:///./src/tooltip.js?");
+
+/***/ }),
+
 /***/ "./src/update.js":
 /*!***********************!*\
   !*** ./src/update.js ***!
@@ -166,7 +178,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Visual\", function() { return Visual; });\n/* harmony import */ var _update_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update.js */ \"./src/update.js\");\n/* harmony import */ var _legend_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./legend.js */ \"./src/legend.js\");\n\n\n\nconst Visual = () => {\n  _legend_js__WEBPACK_IMPORTED_MODULE_1__[\"legend\"];\n\n  d3.json(\"data/data.json\").then((data) => {\n\n    // changes data from string to integer\n    data.forEach(d => {\n      d.countries.forEach(c => {\n        c.income = +c.income;\n      });\n      d.year = +d.year;\n    });\n\n    // formats data to get rid of null values\n    const formattedData = data.map(year => {\n      return year[\"countries\"].filter(country => {\n        let dataExists = (country.income && country.life_exp);\n        return dataExists;\n      })\n    });\n\n    let i = 0\n\n    d3.interval(() => {\n      // At the end of our data, loop back\n      i = (i < 214) ? i + 1 : 0;\n      Object(_update_js__WEBPACK_IMPORTED_MODULE_0__[\"update\"])(formattedData[i], i);\n    }, 100);\n\n    Object(_update_js__WEBPACK_IMPORTED_MODULE_0__[\"update\"])(formattedData[0], 0);\n \n  });\n};\n\n//# sourceURL=webpack:///./src/visual.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Visual\", function() { return Visual; });\n/* harmony import */ var _update_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update.js */ \"./src/update.js\");\n/* harmony import */ var _legend_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./legend.js */ \"./src/legend.js\");\n/* harmony import */ var _tooltip_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tooltip.js */ \"./src/tooltip.js\");\n\n\n\n\nconst Visual = () => {\n  _legend_js__WEBPACK_IMPORTED_MODULE_1__[\"legend\"];\n  _tooltip_js__WEBPACK_IMPORTED_MODULE_2__[\"tooltip\"];\n\n  d3.json(\"data/data.json\").then((data) => {\n\n    // changes data from string to integer\n    data.forEach(d => {\n      d.countries.forEach(c => {\n        c.income = +c.income;\n      });\n      d.year = +d.year;\n    });\n\n    // formats data to get rid of null values\n    const formattedData = data.map(year => {\n      return year[\"countries\"].filter(country => {\n        let dataExists = (country.income && country.life_exp);\n        return dataExists;\n      })\n    });\n\n    let i = 0\n\n    // d3.interval(() => {\n      // At the end of our data, loop back\n      i = (i < 214) ? i + 1 : 0;\n    //   update(formattedData[i], i);\n    // }, 100);\n\n    Object(_update_js__WEBPACK_IMPORTED_MODULE_0__[\"update\"])(formattedData[0], 0);\n \n  });\n};\n\n//# sourceURL=webpack:///./src/visual.js?");
 
 /***/ })
 
