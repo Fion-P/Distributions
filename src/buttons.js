@@ -2,7 +2,10 @@ import { step } from './visual';
 
 let interval;
 
+// ============================= Play ===================================
+
 export const play = () => {
+
   const playButton = document.getElementById("play-button");
 
   console.log(playButton.textContent);
@@ -16,5 +19,6 @@ export const play = () => {
       clearInterval(interval);
     }
   });
+
 };
 
