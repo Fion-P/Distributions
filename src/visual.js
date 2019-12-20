@@ -1,11 +1,10 @@
 import { update } from './update.js';
-
-// ============================= Data ===================================
+import { legend } from './legend.js';
 
 export const Visual = () => {
-  console.log("hello")
+  legend;
+
   d3.json("data/data.json").then((data) => {
-    // console.log(data);
 
     // changes data from string to integer
     data.forEach(d => {
@@ -30,7 +29,7 @@ export const Visual = () => {
       i = (i < 214) ? i + 1 : 0;
       update(formattedData[i], i);
     }, 100);
-    
+
     update(formattedData[0], 0);
  
   });

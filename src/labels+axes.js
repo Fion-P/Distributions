@@ -1,6 +1,7 @@
 import { g } from './chart-area.js';
 import { x, y } from './scales.js';
 import { width, height } from './chart-area.js';
+
 // ============================= Labels ===================================
 
 const xLabel = g.append("text")
