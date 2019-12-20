@@ -1,7 +1,6 @@
 import { update } from './update.js';
 import { legend } from './legend.js';
 import { play, reset, updateSelect } from './buttons.js';
-// import { formattedData } from './chart-area.js';
 
 export const Visual = () => {
   legend;
@@ -28,7 +27,7 @@ export const Visual = () => {
     play(formattedData);
     reset(formattedData);
     updateSelect(formattedData);
-    
+
     // let i = 0
 
     // d3.interval(() => {
