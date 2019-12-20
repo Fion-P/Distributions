@@ -15,7 +15,8 @@ export const play = (data) => {
 
     if (playButton.textContent === "Play") {
       playButton.textContent = "Pause";
-      interval = setInterval(() => step(data), 150);
+      interval = setInterval(() => step(data), 120);
+
     } else if (playButton.textContent === "Pause") {
       playButton.textContent = "Play";
       clearInterval(interval);
@@ -25,7 +26,7 @@ export const play = (data) => {
 };
 
 const step = (data) => {
-  i = (i < 214) ? i + 1 : 0;
+  i = (i < 214) ? i + 1 : 214;
   update(data[i], i);
 };
 
@@ -38,12 +39,13 @@ export const reset = (data) => {
   resetButton.addEventListener("click", (e) => {
     i = 0;
     update(data[0], 0);
+    clearInterval(interval);
   });
 
 };
 
 
-// ============================= Reset ===================================
+// ============================= Select ===================================
 
 const selector = document.getElementById("continent-select");
 

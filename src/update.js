@@ -5,7 +5,7 @@ import { tip } from './tooltip.js';
 import { select } from './buttons.js'
 
 export const update = (data, time) => {
-  const t = d3.transition().duration(150);
+  const t = d3.transition().duration(120);
 
   data = select(data);
 
@@ -29,7 +29,11 @@ export const update = (data, time) => {
           return Math.sqrt(area(d.population) / Math.PI);
         })
         .attr("stroke", "black")
-        .attr("stroke-width", "1px");
+        .attr("stroke-width", "1px")
+        // .append("text")
+        // .attr("y", d => { return y(d.life_exp) })
+        // .attr("x", d => { return x(d.income) })
+        // .
 
-  timeLabel.text(+(time + 1800))
+  timeLabel.text(+(time + 1800));
 };
