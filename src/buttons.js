@@ -81,6 +81,8 @@ export const reset = (data) => {
     // selectedCountries = [];
     // selector.value = "all";
     // clearBoxes();
+    rangeslider.value = 1800;
+    output.innerHTML = rangeslider.value;
     update(data[0], 0);
   });
 
