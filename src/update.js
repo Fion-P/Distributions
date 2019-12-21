@@ -2,15 +2,18 @@ import { g } from './chart-area.js';
 import { x, y, area, continentColor } from './scales.js';
 import { timeLabel, xAxisCall, yAxisCall } from './labels+axes.js';
 import { tip } from './tooltip.js';
-import { select } from './buttons.js'
+import { select, selectCountry } from './buttons.js'
 
 export const update = (data, time) => {
-  const t = d3.transition().duration(120);
+  const t = d3.transition().duration(100);
 
   data = select(data);
 
+  data = selectCountry(data);
+
   const circles = g.selectAll("circle")
     .data(data, d => {
+      // console.log(d);
       return d.country;
     });
 
@@ -26,14 +29,29 @@ export const update = (data, time) => {
         .attr("cy", d => { return y(d.life_exp) })
         .attr("cx", d => { return x(d.income) })
         .attr("r", d => {
+          // console.log(d);
           return Math.sqrt(area(d.population) / Math.PI);
         })
         .attr("stroke", "black")
-        .attr("stroke-width", "1px")
-        // .append("text")
-        // .attr("y", d => { return y(d.life_exp) })
-        // .attr("x", d => { return x(d.income) })
-        // .
+        .attr("stroke-width", "1px");
+
+      // .append("text")
+    
+  // const labels = g.selectAll("text")
+  //   .data(data, d => {
+  //     // console.log(d);
+  //     return d.country;
+  //   });
+
+  // labels.exit().remove();
+
+  // labels.enter()
+  //   .append("text")
+  //   .merge(labels)
+  //   .attr("y", d => { return y(d.life_exp) })
+  //   .attr("x", d => { return x(d.income) })
+  //   .attr("font-size", "8px")
+  //   .text(d=>{return d.country})
 
   timeLabel.text(+(time + 1800));
 };

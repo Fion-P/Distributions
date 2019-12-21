@@ -1,6 +1,7 @@
 import { update } from './update.js';
 import { legend } from './legend.js';
-import { play, reset, updateSelect } from './buttons.js';
+import { play, reset, updateSelect, createOptions, updateCountry } from './buttons.js';
+
 
 export const Visual = () => {
   legend;
@@ -27,6 +28,7 @@ export const Visual = () => {
     play(formattedData);
     reset(formattedData);
     updateSelect(formattedData);
+    updateCountry(formattedData);
 
     // let i = 0
 
@@ -35,7 +37,19 @@ export const Visual = () => {
     //   i = (i < 214) ? i + 1 : 0;
     //   update(formattedData[i], i);
     // }, 100);
+    let countries = [];
 
+    formattedData[0].forEach( r => {
+      // console.log(r)
+      countries.push(r.country)
+      // countries.push(r.country);
+    });
+
+    countries.sort();
+
+    // console.log(countries);
+    // createOptions(formattedData[0]);
+    createOptions(countries);
     update(formattedData[0], 0);
  
   });
