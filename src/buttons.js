@@ -105,7 +105,7 @@ export const reset = (data) => {
 
   resetButton.addEventListener("click", (e) => {
     i = 0;
-    
+    playButton.textContent = "Play";
     clearInterval(interval);
     countrySelector.value= "all";
     selector.value = "all";
