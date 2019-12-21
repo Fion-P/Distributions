@@ -60,43 +60,6 @@ export const updateSelect = (data) => {
   });
 };
 
-
-// ============================= Country Select ================================
-
-// const countrySelector = document.getElementById("country-select");
-
-// export const createOptions = (countries) => {
-
-//   countries.forEach( country => {
-//     let opt = document.createElement("option");
-//     opt.appendChild( document.createTextNode(`${country}`))
-//     opt.value = `${country}`;
-
-//     countrySelector.appendChild(opt);
-//   });
-// };
-
-// export const selectCountry = (data) => {
-
-//   let country = countrySelector.value;
-
-//   data = data.filter(d => {
-//     if (country === "all") {
-//       return true;
-//     } else {
-//       return d.country === country;
-//     }
-//   });
-
-//   return data;
-// }
-
-// export const updateCountry = (data) => {
-//   countrySelector.addEventListener("change", () => {
-//     update(data[i], i);
-//   });
-// };
-
 // ================================ Reset ======================================
 
 const resetButton = document.getElementById("reset-button");
@@ -135,7 +98,7 @@ export const createCheckBoxes = (countries) => {
     x.setAttribute("type", "checkbox");
     x.setAttribute("name", `countries-check`);
     x.setAttribute("value", `${country}`);
-
+    // console.log(x);
     label.appendChild(x);
     label.innerHTML += "<span>" + country + "</span>";
 
@@ -167,27 +130,27 @@ export const checkCountry = (data) => {
   return data;
 }
 
-const checkboxButton = document.getElementById("country-checkoxes")
+// const checkboxButton = document.getElementById("country-checkoxes")
 const allBoxes = document.getElementsByName("countries-check")
 
 
-export const updateSelectedCountry = (data) => {
+// export const updateSelectedCountry = (data) => {
 
-  checkboxButton.addEventListener('click', (e) =>  {
-    e.preventDefault()
-    update(data[i], i);
-  })
-};
+//   checkboxButton.addEventListener('click', (e) =>  {
+//     e.preventDefault()
+//     update(data[i], i);
+//   })
+// };
 
 export const clearBoxes = () => {
-
+  console.log(allBoxes.length)
   allBoxes.forEach( box => {
-
     if (box.type === 'checkbox') {
       box.checked = false;
+      console.log('hit')
     }
-
   })
+
 
 }
 
@@ -201,3 +164,15 @@ export const clearAllChecks = data => {
   })
 
 }
+
+export const checkListener = data => {
+  // const allChecks = document.querySelectorAll('input[name=countries-check]');
+  
+  allBoxes.forEach ( box => {
+    box.addEventListener('change', () => {
+      update(data[i], i);
+    })
+  })
+
+}
+// console.log(allBoxes)
