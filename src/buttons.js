@@ -110,6 +110,7 @@ export const reset = (data) => {
     // countrySelector.value= "all";
     selectedCountries = [];
     selector.value = "all";
+    clearBoxes();
     update(data[0], 0);
   });
 
@@ -177,3 +178,15 @@ export const updateSelectedCountry = (data) => {
     update(data[i], i);
   })
 };
+
+export const clearBoxes = () => {
+
+  allBoxes.forEach( box => {
+
+    if (box.type === 'checkbox') {
+      box.checked = false;
+    }
+
+  })
+
+}
