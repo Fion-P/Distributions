@@ -11,6 +11,7 @@
     /* padding-right: 10px; */
     height: 450px;
     overflow-y: scroll;
+    padding-left: 25px;
 }
 
 /* #country-radio::-webkit-scrollbar {
@@ -69,4 +70,9 @@
 
 .rangeslider {
     padding-left: 80px;
+}
+
+#continent-select {
+    width: 125px;
+    margin-left: 25px;
 }
