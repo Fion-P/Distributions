@@ -1,4 +1,4 @@
-const margin = { left: 80, right: 100, top: 50, bottom: 100 };
+const margin = { left: 80, right: 100, top: 10, bottom: 100 };
 
 export const width = 900 - margin.left - margin.right;
 export const height = 650 - margin.top - margin.bottom;

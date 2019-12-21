@@ -190,3 +190,14 @@ export const clearBoxes = () => {
   })
 
 }
+
+const clearChecks = document.getElementById("clear-checks");
+
+export const clearAllChecks = data => {
+
+  clearChecks.addEventListener('click', e => {
+    clearBoxes();
+    update(data[i], i);
+  })
+
+}

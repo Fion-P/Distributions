@@ -1,6 +1,6 @@
 import { update } from './update.js';
 import { legend } from './legend.js';
-import { play, reset, updateSelect, createOptions, updateCountry, createCheckBoxes, updateSelectedCountry } from './buttons.js';
+import { play, reset, updateSelect, createOptions, updateCountry, createCheckBoxes, updateSelectedCountry, clearAllChecks } from './buttons.js';
 
 
 
@@ -32,16 +32,10 @@ export const Visual = () => {
     reset(formattedData);
     updateSelect(formattedData);
     // updateCountry(formattedData);
-    updateSelectedCountry(formattedData)
+    updateSelectedCountry(formattedData);
+    clearAllChecks(formattedData);
     // formattedData = selectCountry(formattedData)
 
-    // let i = 0
-
-    // d3.interval(() => {
-    //   // At the end of our data, loop back
-    //   i = (i < 214) ? i + 1 : 0;
-    //   update(formattedData[i], i);
-    // }, 100);
     let countries = [];
 
     formattedData[0].forEach( r => {

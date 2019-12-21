@@ -5,7 +5,7 @@ import { width, height } from './chart-area.js';
 // ============================= Labels ===================================
 
 const xLabel = g.append("text")
-  .attr("y", height + 50)
+  .attr("y", height + 45)
   .attr("x", width / 2)
   .attr("font-size", "20px")
   .attr("text-anchor", "middle")
@@ -13,7 +13,7 @@ const xLabel = g.append("text")
 const yLabel = g.append("text")
   .attr("transform", "rotate(-90)")
   .attr("y", -40)
-  .attr("x", -170)
+  .attr("x", -250)
   .attr("font-size", "20px")
   .attr("text-anchor", "middle")
   .text("Life Expectancy (Years)")
