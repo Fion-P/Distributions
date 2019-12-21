@@ -42,16 +42,19 @@ const selector = document.getElementById("continent-select");
 export const select = (data) => {
 
   let continent = selector.value;
+  let selected;
 
   data = data.filter(d => {
     if (continent === "all") {
+      selected = false
       return true;
     } else {
+      selected = true;
       return d.continent === continent;
     }
   });
 
-  return data;
+  return [data, selected];
 };
 
 export const updateSelect = (data) => {
@@ -59,6 +62,8 @@ export const updateSelect = (data) => {
     selectedCountries = [];
     clearBoxes();
     update(data[i], i);
+
+    
   });
 };
 
@@ -83,8 +88,6 @@ export const reset = (data) => {
 
 
 // ============================== Check Boxes ==================================
-
-// country-radio
 
 const checkBoxForm = document.getElementById("country-radio");
 
@@ -116,10 +119,8 @@ export const checkCountry = (data) => {
   selectedCountries = [];
   
   checkedBoxes.forEach((obj) => {
-    // console.log(obj.value);
-    selectedCountries.push(obj.value)
-    // console.log(selectedCountries)
-  })
+    selectedCountries.push(obj.value);
+  });
 
   data = data.filter( d => {
 
@@ -128,12 +129,12 @@ export const checkCountry = (data) => {
       return true;
     } else {
       checked = true;
-      return selectedCountries.includes(d.country)
+      return selectedCountries.includes(d.country);
     }
-  })
+  });
 
   return [data, checked];
-}
+};
 
 const allBoxes = document.getElementsByName("countries-check")
 
@@ -163,5 +164,23 @@ export const checkListener = data => {
       selector.value = "all";
       update(data[i], i);
     })
+  })
+}
+
+// ============================== Slider ==================================
+
+
+let rangeslider = document.getElementById("sliderRange");
+let output = document.getElementById("demo");
+
+output.innerHTML = rangeslider.value;
+
+export const sliderListener = data => {
+
+  rangeslider.addEventListener('input', () => {
+    output.innerHTML = rangeslider.value
+    console.log(rangeslider.value)
+    i = rangeslider.value - 1800;
+    update(data[i], i)
   })
 }

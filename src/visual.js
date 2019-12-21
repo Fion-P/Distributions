@@ -1,7 +1,7 @@
 import { update } from './update.js';
 import { legend } from './legend.js';
 import { play, reset, updateSelect, createCheckBoxes,
-  clearAllChecks, checkListener } from './buttons.js';
+  clearAllChecks, checkListener, sliderListener } from './buttons.js';
 
 
 
@@ -35,6 +35,7 @@ export const Visual = () => {
     // updateCountry(formattedData);
     // updateSelectedCountry(formattedData);
     clearAllChecks(formattedData);
+    sliderListener(formattedData);
     // formattedData = selectCountry(formattedData)
     
     let countries = [];
@@ -46,10 +47,7 @@ export const Visual = () => {
     });
     
     countries.sort();
-    
-    // console.log(countries);
-    // createOptions(formattedData[0]);
-    // createOptions(countries);
+
     createCheckBoxes(countries);
     checkListener(formattedData);
     update(formattedData[0], 0);

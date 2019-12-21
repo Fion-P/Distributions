@@ -8,11 +8,12 @@ import { select, checkCountry } from './buttons.js';
 export const update = (data, time) => {
   const t = d3.transition().duration(100);
 
-  data = select(data);
+  data = select(data)[0];
 
   data = checkCountry(data)[0];
 
   let checked = checkCountry(data)[1];
+  let selected = select(data)[1];
 
   const circles = g.selectAll("circle")
     .data(data, d => {
@@ -40,6 +41,8 @@ export const update = (data, time) => {
 
   if (checked) {
     labelData = data;
+  } else if (selected) {
+    // labelData = data;
   } else {
     labelData =[];
   }
