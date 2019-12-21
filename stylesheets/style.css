@@ -13,9 +13,9 @@
     overflow-y: scroll;
 }
 
-#country-radio::-webkit-scrollbar {
+/* #country-radio::-webkit-scrollbar {
     -webkit-appearance: none;
-}
+} */
 
 .checkboxes {
     /* width: 45%; */
@@ -51,10 +51,10 @@
 }
 
 .chart-buttons {
-    padding-top: 60px;
+    padding-top: 10px;
     /* margin-right: 20px; */
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     /* width: 90%; */
     align-content: center;
 }
@@ -63,3 +63,10 @@
     margin-bottom: 5px;
 }
 
+#sliderRange {
+    width: 400px;
+}
+
+.rangeslider {
+    padding-left: 80px;
+}
