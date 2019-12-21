@@ -56,7 +56,7 @@ export const select = (data) => {
 
 export const updateSelect = (data) => {
   selector.addEventListener("change", () => {
-    // selectedCountries = [];
+    selectedCountries = [];
     clearBoxes();
     update(data[i], i);
   });
@@ -73,9 +73,9 @@ export const reset = (data) => {
     playButton.textContent = "Play";
     clearInterval(interval);
     // countrySelector.value= "all";
-    selectedCountries = [];
-    selector.value = "all";
-    clearBoxes();
+    // selectedCountries = [];
+    // selector.value = "all";
+    // clearBoxes();
     update(data[0], 0);
   });
 
@@ -149,6 +149,9 @@ const clearChecks = document.getElementById("clear-checks");
 
 export const clearAllChecks = data => {
   clearChecks.addEventListener('click', e => {
+    // clearBoxes();
+    selectedCountries = [];
+    selector.value = "all";
     clearBoxes();
     update(data[i], i);
   })
