@@ -55,9 +55,9 @@ export const update = (data, time) => {
     .append("text")
     .attr("id", "labels")
     .merge(labels)
-    .attr("y", d => { return y(d.life_exp); })
-    .attr("x", d => { return x(d.income); })
-    .attr("font-size", "8px")
+    .attr("y", d => { return y(d.life_exp) - (Math.sqrt(area(d.population) / Math.PI)); })
+    .attr("x", d => { return x(d.income) + (Math.sqrt(area(d.population) / Math.PI)); })
+    .attr("font-size", "12px")
     .text(d => { return d.country; });
 
   timeLabel.text(+(time + 1800));
