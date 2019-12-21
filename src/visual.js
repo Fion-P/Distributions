@@ -31,7 +31,7 @@ export const Visual = () => {
     play(formattedData);
     reset(formattedData);
     updateSelect(formattedData);
-    updateCountry(formattedData);
+    // updateCountry(formattedData);
     updateSelectedCountry(formattedData)
     // formattedData = selectCountry(formattedData)
 

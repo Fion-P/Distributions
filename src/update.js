@@ -2,7 +2,7 @@ import { g } from './chart-area.js';
 import { x, y, area, continentColor } from './scales.js';
 import { timeLabel, xAxisCall, yAxisCall } from './labels+axes.js';
 import { tip } from './tooltip.js';
-import { select, selectCountry, checkCountry } from './buttons.js';
+import { select, checkCountry } from './buttons.js';
 // import { formattedData } from './visual.js'
 
 export const update = (data, time) => {
@@ -11,24 +11,10 @@ export const update = (data, time) => {
   data = select(data);
 
   // console.log(data);
-  data = selectCountry(data);
+  // data = selectCountry(data);
 
   data = checkCountry(data);
-  // console.log(checkCountry(data));
 
-  // let countries = [];
-
-  // data.forEach(r => {
-  //   // console.log(r)
-  //   countries.push(r.country)
-  //   // countries.push(r.country);
-  // });
-
-  // countries.sort();
-
-  // console.log(countries);
-
-  // createRadios(countries);
 
   const circles = g.selectAll("circle")
     .data(data, d => {

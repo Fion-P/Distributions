@@ -63,39 +63,39 @@ export const updateSelect = (data) => {
 
 // ============================= Country Select ================================
 
-const countrySelector = document.getElementById("country-select");
+// const countrySelector = document.getElementById("country-select");
 
-export const createOptions = (countries) => {
+// export const createOptions = (countries) => {
 
-  countries.forEach( country => {
-    let opt = document.createElement("option");
-    opt.appendChild( document.createTextNode(`${country}`))
-    opt.value = `${country}`;
+//   countries.forEach( country => {
+//     let opt = document.createElement("option");
+//     opt.appendChild( document.createTextNode(`${country}`))
+//     opt.value = `${country}`;
 
-    countrySelector.appendChild(opt);
-  });
-};
+//     countrySelector.appendChild(opt);
+//   });
+// };
 
-export const selectCountry = (data) => {
+// export const selectCountry = (data) => {
 
-  let country = countrySelector.value;
+//   let country = countrySelector.value;
 
-  data = data.filter(d => {
-    if (country === "all") {
-      return true;
-    } else {
-      return d.country === country;
-    }
-  });
+//   data = data.filter(d => {
+//     if (country === "all") {
+//       return true;
+//     } else {
+//       return d.country === country;
+//     }
+//   });
 
-  return data;
-}
+//   return data;
+// }
 
-export const updateCountry = (data) => {
-  countrySelector.addEventListener("change", () => {
-    update(data[i], i);
-  });
-};
+// export const updateCountry = (data) => {
+//   countrySelector.addEventListener("change", () => {
+//     update(data[i], i);
+//   });
+// };
 
 // ================================ Reset ======================================
 
