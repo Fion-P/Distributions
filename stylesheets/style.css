@@ -9,8 +9,12 @@
     /* max-width: 20%; */
     margin: 0;
     /* padding-right: 10px; */
-    height: 500px;
-    overflow: scroll;
+    height: 450px;
+    overflow-y: scroll;
+}
+
+#country-radio::-webkit-scrollbar {
+    -webkit-appearance: none;
 }
 
 .checkboxes {
@@ -54,3 +58,8 @@
     /* width: 90%; */
     align-content: center;
 }
+
+#clear-checks {
+    margin-bottom: 5px;
+}
+
