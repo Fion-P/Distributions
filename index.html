@@ -14,42 +14,52 @@
 </head>
 
 <body>
-
-  <div>
+  <!-- 
     <div>
-      <button id="play-button" >Play</button>
-      <button id="reset-button" >Reset</button>
-    </div>
-    <div>
-      <select id="continent-select" >
+      <select id="country-select">
         <option selected value="all">All</option>
-        <option value="europe">Europe</option>
-        <option value="asia">Asia</option>
-        <option value="americas">Americas</option>
-        <option value="africa">Africa</option>
       </select>
-    </div>
-  </div>
-<!-- 
-  <div>
-    <select id="country-select">
-      <option selected value="all">All</option>
-    </select>
-  </div> -->
-  <div class="chart-container">
+    </div> -->
+  <div class="chart-body"> 
+    
+    <div class="chart-container">
+      
       <div class="radio-chart">
-        <h1 class="checkbox-title">Select country</h1>
+        <h1 class="selector-title">Select a Continent</h1>
+        
+        <div>
+          <select id="continent-select" >
+            <option selected value="all">All</option>
+            <option value="europe">Europe</option>
+            <option value="asia">Asia</option>
+            <option value="americas">Americas</option>
+            <option value="africa">Africa</option>
+          </select>
+        </div>
+        
+        <h1 class="checkbox-title">Select a Country</h1>
+        
         <button id="country-checkoxes">Filter</button>
         <form id="country-radio">
           <!-- <input type="submit" value="Filter"> -->
-          <br>
         </form>
       </div>
-    <span>
-      <div>
-        <div id="chart-area"></div>
-      </div>
-    </span>
+      
+      <span>
+        <div class="chart-buttons">
+          <div>
+            <button id="play-button" >Play</button>
+            <button id="reset-button" >Reset</button>
+          </div>
+        </div>
+
+        <div>
+          <div id="chart-area"></div>
+        </div>
+      </span>
+      
+    </div>
+    
   </div>
 
 

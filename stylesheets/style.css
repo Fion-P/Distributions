@@ -9,12 +9,12 @@
     /* max-width: 20%; */
     margin: 0;
     /* padding-right: 10px; */
-    height: 520px;
+    height: 500px;
     overflow: scroll;
 }
 
 .checkboxes {
-    width: 45%;
+    /* width: 45%; */
     margin: 0;
 }
 
@@ -28,7 +28,28 @@
     display: flex;
 }
 
-.checkbox-title {
-    font-size: 40px;
+.checkbox-title, .selector-title {
+    font-size: 30px;
     padding: 5px;
+}
+
+#country-checkoxes {
+  margin: 0px 0 5px 0;
+}
+
+.chart-body {
+  display: flex;
+  justify-content: center;
+}
+
+#chart-area {
+    /* padding-top: 30px; */
+}
+
+.chart-buttons {
+    padding-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    align-content: center;
 }
