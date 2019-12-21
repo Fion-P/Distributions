@@ -56,6 +56,8 @@ export const select = (data) => {
 
 export const updateSelect = (data) => {
   selector.addEventListener("change", () => {
+    // selectedCountries = [];
+    clearBoxes();
     update(data[i], i);
   });
 };
@@ -155,6 +157,7 @@ export const clearAllChecks = data => {
 export const checkListener = data => {
   allBoxes.forEach ( box => {
     box.addEventListener('change', () => {
+      selector.value = "all";
       update(data[i], i);
     })
   })
