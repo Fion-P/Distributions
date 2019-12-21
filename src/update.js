@@ -10,15 +10,12 @@ export const update = (data, time) => {
 
   data = select(data);
 
-  // console.log(data);
-  // data = selectCountry(data);
+  data = checkCountry(data)[0];
 
-  data = checkCountry(data);
-
+  let checked = checkCountry(data)[1];
 
   const circles = g.selectAll("circle")
     .data(data, d => {
-      // console.log(d);
       return d.country;
     });
 
@@ -31,32 +28,37 @@ export const update = (data, time) => {
       .merge(circles)
       .transition(t)
         .attr("fill", function (d) { return continentColor(d.continent); })
-        .attr("cy", d => { return y(d.life_exp) })
-        .attr("cx", d => { return x(d.income) })
+        .attr("cy", d => { return y(d.life_exp); })
+        .attr("cx", d => { return x(d.income); })
         .attr("r", d => {
-          // console.log(d);
           return Math.sqrt(area(d.population) / Math.PI);
         })
         .attr("stroke", "black")
         .attr("stroke-width", "1px");
 
-      // .append("text")
-    
-  // const labels = g.selectAll("text")
-  //   .data(data, d => {
-  //     // console.log(d);
-  //     return d.country;
-  //   });
+  let labelData 
 
-  // labels.exit().remove();
+  if (checked) {
+    labelData = data;
+  } else {
+    labelData =[];
+  }
 
-  // labels.enter()
-  //   .append("text")
-  //   .merge(labels)
-  //   .attr("y", d => { return y(d.life_exp) })
-  //   .attr("x", d => { return x(d.income) })
-  //   .attr("font-size", "8px")
-  //   .text(d=>{return d.country})
+  const labels = g.selectAll("#labels")
+    .data(labelData, d => {
+      return d.country;
+    });
+
+  labels.exit().remove();
+
+  labels.enter()
+    .append("text")
+    .attr("id", "labels")
+    .merge(labels)
+    .attr("y", d => { return y(d.life_exp); })
+    .attr("x", d => { return x(d.income); })
+    .attr("font-size", "8px")
+    .text(d => { return d.country; });
 
   timeLabel.text(+(time + 1800));
 };

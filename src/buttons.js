@@ -108,7 +108,8 @@ export const createCheckBoxes = (countries) => {
 };
 
 export const checkCountry = (data) => {
-  
+  let checked;
+
   let checkedBoxes = document.querySelectorAll('input[name=countries-check]:checked');
   selectedCountries = [];
   
@@ -121,58 +122,40 @@ export const checkCountry = (data) => {
   data = data.filter( d => {
 
     if (selectedCountries.length === 0) {
+      checked = false;
       return true;
     } else {
+      checked = true;
       return selectedCountries.includes(d.country)
     }
   })
 
-  return data;
+  return [data, checked];
 }
 
-// const checkboxButton = document.getElementById("country-checkoxes")
 const allBoxes = document.getElementsByName("countries-check")
 
-
-// export const updateSelectedCountry = (data) => {
-
-//   checkboxButton.addEventListener('click', (e) =>  {
-//     e.preventDefault()
-//     update(data[i], i);
-//   })
-// };
-
 export const clearBoxes = () => {
-  console.log(allBoxes.length)
   allBoxes.forEach( box => {
     if (box.type === 'checkbox') {
       box.checked = false;
-      console.log('hit')
     }
   })
-
-
 }
 
 const clearChecks = document.getElementById("clear-checks");
 
 export const clearAllChecks = data => {
-
   clearChecks.addEventListener('click', e => {
     clearBoxes();
     update(data[i], i);
   })
-
 }
 
 export const checkListener = data => {
-  // const allChecks = document.querySelectorAll('input[name=countries-check]');
-  
   allBoxes.forEach ( box => {
     box.addEventListener('change', () => {
       update(data[i], i);
     })
   })
-
 }
-// console.log(allBoxes)
