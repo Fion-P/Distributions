@@ -1,7 +1,7 @@
 // import { step } from './visual';
 import { update } from './update.js';
 // import { formattedData } from './visual.js'
-
+let selectedCountries;
 // console.log(formattedData);
 
 let i = 0;
@@ -107,7 +107,8 @@ export const reset = (data) => {
     i = 0;
     playButton.textContent = "Play";
     clearInterval(interval);
-    countrySelector.value= "all";
+    // countrySelector.value= "all";
+    selectedCountries = [];
     selector.value = "all";
     update(data[0], 0);
   });
@@ -140,7 +141,7 @@ export const createCheckBoxes = (countries) => {
 export const checkCountry = (data) => {
   
   let checkedBoxes = document.querySelectorAll('input[name=countries-check]:checked');
-  let selectedCountries = [];
+  selectedCountries = [];
   
   checkedBoxes.forEach((obj) => {
     // console.log(obj.value);
