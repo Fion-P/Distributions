@@ -2,14 +2,19 @@ import { g } from './chart-area.js';
 import { x, y, area, continentColor } from './scales.js';
 import { timeLabel, xAxisCall, yAxisCall } from './labels+axes.js';
 import { tip } from './tooltip.js';
-import { select, selectCountry, createRadios } from './buttons.js';
+import { select, selectCountry, checkCountry } from './buttons.js';
+// import { formattedData } from './visual.js'
 
 export const update = (data, time) => {
   const t = d3.transition().duration(100);
 
   data = select(data);
 
+  // console.log(data);
   data = selectCountry(data);
+
+  data = checkCountry(data);
+  // console.log(checkCountry(data));
 
   // let countries = [];
 

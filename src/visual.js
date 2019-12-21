@@ -1,7 +1,10 @@
 import { update } from './update.js';
 import { legend } from './legend.js';
-import { play, reset, updateSelect, createOptions, updateCountry, createRadios } from './buttons.js';
+import { play, reset, updateSelect, createOptions, updateCountry, createCheckBoxes, updateSelectedCountry } from './buttons.js';
 
+
+
+export let formattedData;
 
 export const Visual = () => {
   legend;
@@ -17,7 +20,7 @@ export const Visual = () => {
     });
     
     // formats data to get rid of null values
-    let formattedData = data.map(year => {
+    formattedData = data.map(year => {
       return year["countries"].filter(country => {
         let dataExists = (country.income && country.life_exp);
         return dataExists;
@@ -29,6 +32,8 @@ export const Visual = () => {
     reset(formattedData);
     updateSelect(formattedData);
     updateCountry(formattedData);
+    updateSelectedCountry(formattedData)
+    // formattedData = selectCountry(formattedData)
 
     // let i = 0
 
@@ -49,8 +54,8 @@ export const Visual = () => {
 
     // console.log(countries);
     // createOptions(formattedData[0]);
-    createOptions(countries);
-    createRadios(countries);
+    // createOptions(countries);
+    createCheckBoxes(countries);
     update(formattedData[0], 0);
  
   });

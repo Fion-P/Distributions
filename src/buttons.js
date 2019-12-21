@@ -115,30 +115,59 @@ export const reset = (data) => {
 };
 
 
-// ============================= Radio Buttons =================================
+// ============================== Check Boxes ==================================
 
 // country-radio
 
-const radioForm = document.getElementById("country-radio");
+const checkBoxForm = document.getElementById("country-radio");
 
-
-
-export const createRadios = (countries) => {
+export const createCheckBoxes = (countries) => {
   let x = '';
   countries.forEach( (country, i) => {
     let label = document.createElement("label");
     x = document.createElement("input");
     x.setAttribute("type", "checkbox")
-    x.setAttribute("name", `${country}`)
+    x.setAttribute("name", `countries-check`)
     x.setAttribute("value", `${country}`)
     // x.value = `${country}`;
     label.appendChild(x);
     label.innerHTML += "<span>" + country + "</span><br>"
 
-    radioForm.appendChild(label);
+    checkBoxForm.appendChild(label);
   })
 };
 
-// console.log()
+export const checkCountry = (data) => {
+  
+  let checkedBoxes = document.querySelectorAll('input[name=countries-check]:checked');
+  let selectedCountries = [];
+  
+  checkedBoxes.forEach((obj) => {
+    // console.log(obj.value);
+    selectedCountries.push(obj.value)
+    // console.log(selectedCountries)
+  })
 
-console.log(radioForm)
+  data = data.filter( d => {
+
+    if (selectedCountries.length === 0) {
+      return true;
+    } else {
+      return selectedCountries.includes(d.country)
+    }
+  })
+
+  return data;
+}
+
+const checkboxButton = document.getElementById("country-checkoxes")
+const allBoxes = document.getElementsByName("countries-check")
+
+
+export const updateSelectedCountry = (data) => {
+
+  checkboxButton.addEventListener('click', (e) =>  {
+    e.preventDefault()
+    update(data[i], i);
+  })
+};
