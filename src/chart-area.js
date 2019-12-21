@@ -1,6 +1,6 @@
-const margin = { left: 80, right: 100, top: 10, bottom: 100 };
+const margin = { left: 80, right: 0, top: 10, bottom: 100 };
 
-export const width = 900 - margin.left - margin.right;
+export const width = 800 - margin.left - margin.right;
 export const height = 600 - margin.top - margin.bottom;
 
 export const g = d3.select("#chart-area")
