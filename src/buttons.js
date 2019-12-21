@@ -6,7 +6,7 @@ import { update } from './update.js';
 
 let i = 0;
 
-// ============================= Play ===================================
+// ================================= Play ======================================
 
 let interval;
 
@@ -35,7 +35,7 @@ const step = (data) => {
 };
 
 
-// ============================= Select ===================================
+// ================================= Select ====================================
 
 const selector = document.getElementById("continent-select");
 
@@ -97,7 +97,7 @@ export const updateCountry = (data) => {
   });
 };
 
-// ============================= Reset ===================================
+// ================================ Reset ======================================
 
 const resetButton = document.getElementById("reset-button");
 
@@ -113,3 +113,32 @@ export const reset = (data) => {
   });
 
 };
+
+
+// ============================= Radio Buttons =================================
+
+// country-radio
+
+const radioForm = document.getElementById("country-radio");
+
+
+
+export const createRadios = (countries) => {
+  let x = '';
+  countries.forEach( (country, i) => {
+    let label = document.createElement("label");
+    x = document.createElement("input");
+    x.setAttribute("type", "checkbox")
+    x.setAttribute("name", `${country}`)
+    x.setAttribute("value", `${country}`)
+    // x.value = `${country}`;
+    label.appendChild(x);
+    label.innerHTML += "<span>" + country + "</span><br>"
+
+    radioForm.appendChild(label);
+  })
+};
+
+// console.log()
+
+console.log(radioForm)

@@ -3,3 +3,13 @@
     margin-right: auto;
     display: block;
 }
+
+.radio-chart {
+    display: flex;
+}
+
+#country-radio {
+    max-width: 20%;
+    margin: 0;
+    padding-right: 10px;
+}

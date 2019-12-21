@@ -1,6 +1,6 @@
 import { update } from './update.js';
 import { legend } from './legend.js';
-import { play, reset, updateSelect, createOptions, updateCountry } from './buttons.js';
+import { play, reset, updateSelect, createOptions, updateCountry, createRadios } from './buttons.js';
 
 
 export const Visual = () => {
@@ -50,6 +50,7 @@ export const Visual = () => {
     // console.log(countries);
     // createOptions(formattedData[0]);
     createOptions(countries);
+    createRadios(countries);
     update(formattedData[0], 0);
  
   });
