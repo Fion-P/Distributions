@@ -4,12 +4,31 @@
     display: block;
 }
 
+
+#country-radio {
+    /* max-width: 20%; */
+    margin: 0;
+    /* padding-right: 10px; */
+    height: 520px;
+    overflow: scroll;
+}
+
+.checkboxes {
+    width: 45%;
+    margin: 0;
+}
+
 .radio-chart {
+    width: 20%;
+    margin: 0;
+    padding-right: 10px;
+}
+
+.chart-container {
     display: flex;
 }
 
-#country-radio {
-    max-width: 20%;
-    margin: 0;
-    padding-right: 10px;
+.checkbox-title {
+    font-size: 40px;
+    padding: 5px;
 }

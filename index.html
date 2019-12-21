@@ -8,6 +8,7 @@
   <!-- D3 Tooltip CSS -->
   <link rel="stylesheet" href="stylesheets/d3-tip.css">
   <!-- Custom styling -->
+  <link rel="stylesheet" href="stylesheets/reset.css">
   <link rel="stylesheet" href="stylesheets/style.css">
   <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
@@ -35,15 +36,15 @@
       <option selected value="all">All</option>
     </select>
   </div> -->
-
-  <div class="radio-chart">
-    <form id="country-radio">
-      <h1>Select country</h1>
-      <!-- <input type="submit" value="Filter"> -->
-      <button id="country-checkoxes">Filter</button>
-      <br>
-    </form>
-
+  <div class="chart-container">
+      <div class="radio-chart">
+        <h1 class="checkbox-title">Select country</h1>
+        <button id="country-checkoxes">Filter</button>
+        <form id="country-radio">
+          <!-- <input type="submit" value="Filter"> -->
+          <br>
+        </form>
+      </div>
     <span>
       <div>
         <div id="chart-area"></div>
@@ -54,6 +55,7 @@
 
   <!-- External JS libraries -->
   <script src="dist/d3-tip.js"></script>
+  <!-- <script src="dist/js/d3.min.js"></script> -->
   <!-- Custom JS -->
   <script src="dist/main.js"></script>
 

@@ -125,17 +125,22 @@ const checkBoxForm = document.getElementById("country-radio");
 export const createCheckBoxes = (countries) => {
   let x = '';
   countries.forEach( (country, i) => {
-    let label = document.createElement("label");
-    x = document.createElement("input");
-    x.setAttribute("type", "checkbox")
-    x.setAttribute("name", `countries-check`)
-    x.setAttribute("value", `${country}`)
-    // x.value = `${country}`;
-    label.appendChild(x);
-    label.innerHTML += "<span>" + country + "</span><br>"
+    let container = document.createElement("div");
+    container.setAttribute("class", "checkboxes")
 
-    checkBoxForm.appendChild(label);
-  })
+    let label = document.createElement("label");
+
+    x = document.createElement("input");
+    x.setAttribute("type", "checkbox");
+    x.setAttribute("name", `countries-check`);
+    x.setAttribute("value", `${country}`);
+
+    label.appendChild(x);
+    label.innerHTML += "<span>" + country + "</span>";
+
+    container.appendChild(label);
+    checkBoxForm.appendChild(container);
+  });
 };
 
 export const checkCountry = (data) => {
