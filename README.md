@@ -1,4 +1,4 @@
-# [LifeExp-vs-GDP](https://fion-p.github.io/Distributions/)
+# [Distributions](https://fion-p.github.io/Distributions/)
 
 ![full](https://i.pinimg.com/originals/94/8c/bd/948cbd7c0c068feafee44aedccfab86f.gif)
 
