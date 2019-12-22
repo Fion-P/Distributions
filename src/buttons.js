@@ -102,6 +102,7 @@ export const sliderListener = data => {
     i = rangeslider.value - 1800;
     update(data[i], i);
   });
+  
   rangeslider.addEventListener('click', () => {
     clearInterval(interval);
     playButton.textContent = "Play";
