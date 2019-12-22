@@ -46,8 +46,6 @@ export const update = (data, time) => {
 
   if (checked) {
     labelData = data;
-  } else if (selected) {
-    // labelData = data;
   } else {
     labelData =[];
   }

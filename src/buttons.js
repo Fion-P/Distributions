@@ -57,9 +57,14 @@ export const select = (data) => {
 
 export const updateSelect = (data) => {
   selector.addEventListener("change", () => {
+    // selectedCountries = [];
+    // checked = false;
     selectedCountries = [];
+    // selector.value = "all";
     clearBoxes();
-    update(data[i], i);    
+    update(data[i], i);
+    // clearBoxes();
+    // update(data[i], i);    
   });
 };
 
@@ -149,6 +154,7 @@ export const checkCountry = (data) => {
 
     if (selectedCountries.length === 0) {
       checked = false;
+      console.log("hit")
       return true;
     } else {
       checked = true;
