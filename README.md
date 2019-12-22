@@ -19,6 +19,35 @@ Distributions is an interactive data visualization based off of Hans Rosling's T
   * D3 tips are used so that users can see the information.
   * The tips are shown when the mouse hovers over the bubble.
   * Tips don't appear unless the mouse is on the bubble so that the data does not get congested.
+  
+### Displaying Data by Year
+```javascript
+   const circles = g.selectAll("circle")
+    .data(data, d => {
+      return d.country;
+    });
+
+  circles.exit().remove();
+
+  circles.enter()
+    .append("circle")
+      .on("mouseover", tip.show)
+      .on("mouseout", tip.hide)
+      .merge(circles)
+      .transition(t)
+        .attr("fill", (d) => { return continentColor(d.continent); })
+        .attr("cy", d => { return y(d.life_exp); })
+        .attr("cx", d => { return x(d.income); })
+        .attr("r", d => {
+          return Math.sqrt(area(d.population) / Math.PI);
+        })
+        .attr("stroke", (d) => { return labelColor(d.continent); })
+        .attr("stroke-width", "1px")
+        .attr("opacity", "0.8");
+```
+ * D3's enter, update, and exit functions are used to cotinuously update the data so that it changes by year
+ * Uses the merge method to combine enter and update attributes 
+ * Utilizes transition after the merge to allow for smooth visuals as the data changes.
 
 ### Selectors and Checkboxes
 
