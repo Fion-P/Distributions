@@ -1,25 +1,26 @@
 # [LifeExp-vs-GDP](https://fion-p.github.io/Distributions/)
 
-Distributions is an interactive data visualization based off of Hans Rosling's TED talk on the correlation between income and lifespan. The dataset is parsed from gapminder and is used to create this visualization where users are allowed to change the countries, change the regions, and change the years. The bubbles represent each country, with the size determined by the population for that year and the color determined by the country's region. 
-
 ![full](https://i.pinimg.com/originals/94/8c/bd/948cbd7c0c068feafee44aedccfab86f.gif)
 
-# Technologies Used
+## Background
+Distributions is an interactive data visualization based off of Hans Rosling's TED talk on the correlation between income and lifespan. The dataset is parsed from gapminder and is used to create this visualization where users are allowed to change the countries, change the regions, and change the years. The bubbles represent each country, with the size determined by the population for that year and the color determined by the country's region.
+
+## Technologies Used
   * D3.js to create the visuals
   * Vanilla javascript to create dynamic features
   * HTML5 to display the visuals
   * CSS3 to style the contents
  
-# Feature Highlights
+## Feature Highlights
 
-## D3 Tips and Date Slider
+### D3 Tips and Date Slider
 <!-- ![drags](https://i.pinimg.com/originals/ba/a0/a9/baa0a9f9520475e3fef4b3d30d1bf001.gif) -->
 ![tips](d3tip2.png)
   * D3 tips are used so that users can see the information.
   * The tips are shown when the mouse hovers over the bubble.
   * Tips don't appear unless the mouse is on the bubble so that the data does not get congested.
 
-## Selectors and Checkboxes
+### Selectors and Checkboxes
 
 ![selects](https://i.pinimg.com/originals/67/75/3b/67753b3cf7a5d4f6f052bf9fc9814258.gif)
 
@@ -29,7 +30,7 @@ Distributions is an interactive data visualization based off of Hans Rosling's T
   * The bubbles are filtered on click and upon check labels are appended to the graph. 
 
 
-## Date Slider 
+### Date Slider 
 
   ```javascript
     let rangeslider = document.getElementById("sliderRange");
