@@ -15,7 +15,7 @@ Distributions is an interactive data visualization based off of Hans Rosling's T
 
 ### D3 Tips
 <!-- ![drags](https://i.pinimg.com/originals/ba/a0/a9/baa0a9f9520475e3fef4b3d30d1bf001.gif) -->
-![tips](d3tip2.png)
+![tips](https://i.pinimg.com/originals/33/02/92/3302922aec0d65305773b4d24538ca51.gif)
   * D3 tips are used so that users can see the information.
   * The tips are shown when the mouse hovers over the bubble.
   * Tips don't appear unless the mouse is on the bubble so that the data does not get congested.
@@ -49,7 +49,7 @@ Distributions is an interactive data visualization based off of Hans Rosling's T
  * Uses the merge method to combine enter and update attributes 
  * Utilizes transition after the merge to allow for smooth visuals as the data changes.
 
-### Selectors and Checkboxes
+### Filters and Buttons
 
 ![selects](https://i.pinimg.com/originals/67/75/3b/67753b3cf7a5d4f6f052bf9fc9814258.gif)
 
@@ -57,6 +57,10 @@ Distributions is an interactive data visualization based off of Hans Rosling's T
   * The bubbles are switched on change and can be changed while playing and while not playing. 
   * Checkboxes allow users to specify which countries to look at. 
   * The bubbles are filtered on click and upon check labels are appended to the graph. 
+  * Buttons are created on the top right to allow users to:
+     * Play and pause the visualization
+     * Clear the filters for countries and continents
+     * Restart the visualization 
 
 
 ### Date Slider 
