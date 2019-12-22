@@ -1,7 +1,7 @@
-const margin = { left: 80, right: 0, top: 10, bottom: 100 };
+const margin = { left: 80, right: 0, top: 10, bottom: 80 };
 
 export const width = 800 - margin.left - margin.right;
-export const height = 600 - margin.top - margin.bottom;
+export const height = 570 - margin.top - margin.bottom;
 
 export const g = d3.select("#chart-area")
   .append("svg")

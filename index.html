@@ -14,7 +14,9 @@
   <link rel="stylesheet" href="stylesheets/buttons.css">
   <link rel="stylesheet" href="stylesheets/select.css">
   <link rel="stylesheet" href="stylesheets/range.css">
+  <link rel="stylesheet" href="stylesheets/header.css">
 
+  <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
@@ -25,14 +27,34 @@
         <option selected value="all">All</option>
       </select>
     </div> -->
+
+    <div class="header-content">
+      <div class="header">
+          <div class="title">
+            <h1><i class="fas fa-chart-line"></i> Distributions </h1>
+          </div>
+          <div class=links>
+            <span>
+              <a class="dev-links" href="https://github.com/Fion-P/" target="_blank"><i class="fab fa-github-square"></i></a>
+            </span>
+            <span>
+              <a class="dev-links" href="https://www.linkedin.com/in/fion-pang-429172154/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </span>
+          </div>
+        </div>
+    </div>
   
   <div class="chart-body"> 
     
     <div class="chart-container">
-      
       <div class="radio-chart">
-        
-        <h1 class="selector-title">Continent</h1>
+        <div class="description">
+          <h1>
+            This chart compares Life Expectancy versus GDP per capita of 182 nations from the years 1800 to 2013. Each bubble
+            represents a country, and the size of each bubble represents the population with the color representing the region.
+          </h1>
+        </div>
+        <h1 class="selector-title">Continents</h1>
         
         <div class="custom-select">
           <select id="continent-select" >
@@ -69,11 +91,16 @@
           <div id="chart-area"></div>
         </div>
       </span>
-      
+
     </div>
     
   </div>
   
+  <footer>
+    <div class="footer">
+      <h3>Project and data based off of visualization by Gapminder </h3>
+    </div>
+  </footer>
 
 
   <!-- External JS libraries -->

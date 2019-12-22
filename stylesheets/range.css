@@ -1,3 +1,24 @@
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(1px) rotate(2deg);
+    transform: translateX(1px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-1px) rotate(-2deg);
+    transform: translateX(-1px) rotate(-2deg);
+  }
+}
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(1px) rotate(2deg);
+    transform: translateX(1px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-1px) rotate(-2deg);
+    transform: translateX(-1px) rotate(-2deg);
+  }
+}
+
 input[type=range] {
   -webkit-appearance: none;
   margin: 10px 0;
