@@ -18,4 +18,4 @@ export const area = d3.scaleLinear()
 // scale by population
 
 // Color Scale
-export const continentColor = d3.scaleOrdinal().range(d3.schemeTableau10);
+export const continentColor = d3.scaleOrdinal().range(d3.schemePastel1);

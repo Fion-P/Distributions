@@ -5,7 +5,7 @@ import { continentColor } from './scales.js';
 const continents = ["europe", "asia", "americas", "africa"];
 
 export const legend = g.append("g")
-  .attr("transform", "translate(" + (width - 10) + "," + (height - 125) + ")");
+  .attr("transform", "translate(" + (width - 15) + "," + (height - 125) + ")");
 // shift to bottom of visualization
 
 continents.forEach((continent, i) => {

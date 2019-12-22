@@ -1,0 +1,49 @@
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(1px) rotate(2deg);
+    transform: translateX(1px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-1px) rotate(-2deg);
+    transform: translateX(-1px) rotate(-2deg);
+  }
+}
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(1px) rotate(2deg);
+    transform: translateX(1px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-1px) rotate(-2deg);
+    transform: translateX(-1px) rotate(-2deg);
+  }
+}
+
+#play-button, #clear-checks, #reset-button {
+    border-radius: 3px;
+    background-color:  rgb(231, 229, 229);
+    border: none;
+    cursor: pointer;
+    width: 90px;
+    /* height: 25px; */
+    padding: 10px 0 10px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#play-button:hover, #clear-checks:hover, #reset-button:hover {
+
+    opacity: 0.8;
+    background: rgb(241, 240, 240);
+    -webkit-animation-name: hvr-buzz;
+    animation-name: hvr-buzz;
+    -webkit-animation-duration: 0.15s;
+    animation-duration: 0.15s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    /* color: rgb(250, 62, 62); */
+    transition: 300ms ease;
+    cursor: pointer;
+}

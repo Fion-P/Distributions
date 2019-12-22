@@ -34,8 +34,9 @@ export const update = (data, time) => {
         .attr("r", d => {
           return Math.sqrt(area(d.population) / Math.PI);
         })
-        .attr("stroke", "black")
-        .attr("stroke-width", "1px");
+        .attr("stroke", "rgb(231, 229, 229)")
+        .attr("stroke-width", "1px")
+        .attr("opacity", "0.8");
 
   let labelData 
 

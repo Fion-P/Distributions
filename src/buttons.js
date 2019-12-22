@@ -97,18 +97,29 @@ export const createCheckBoxes = (countries) => {
   let x = '';
   countries.forEach( (country, i) => {
     let container = document.createElement("div");
-    container.setAttribute("class", "checkboxes")
+    container.setAttribute("class", "checkboxes");
 
-    let label = document.createElement("label");
+    let label = document.createElement("span");
+    label.setAttribute("class", "box-label");
+    label.innerHTML += country;
+
+
+    let box = document.createElement("span");
+    box.setAttribute("class", "each-box");
+
+    // let label = document.createElement("label");
 
     x = document.createElement("input");
     x.setAttribute("type", "checkbox");
     x.setAttribute("name", `countries-check`);
     x.setAttribute("value", `${country}`);
     // console.log(x);
-    label.appendChild(x);
-    label.innerHTML += "<span>" + country + "</span>";
-
+    // box.appendChild(x);
+    // label.appendChild(box);
+    // label.innerHTML += "<span class='box-label'>" + country + "</span>";
+    box.appendChild(x);
+    
+    container.appendChild(box);
     container.appendChild(label);
     checkBoxForm.appendChild(container);
   });

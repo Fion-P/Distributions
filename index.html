@@ -8,8 +8,11 @@
   <!-- D3 Tooltip CSS -->
   <link rel="stylesheet" href="stylesheets/d3-tip.css">
   <!-- Custom styling -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylesheets/reset.css">
   <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/buttons.css">
+
   <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
@@ -30,17 +33,17 @@
         
         <div>
           <select id="continent-select" >
-            <option selected value="all">All</option>
-            <option value="europe">Europe</option>
-            <option value="asia">Asia</option>
-            <option value="americas">Americas</option>
-            <option value="africa">Africa</option>
+            <option class="continent-option" selected value="all">All</option>
+            <option class="continent-option" value="europe">Europe</option>
+            <option class="continent-option" value="asia">Asia</option>
+            <option class="continent-option" value="americas">Americas</option>
+            <option class="continent-option" value="africa">Africa</option>
           </select>
         </div>
         
         <h1 class="checkbox-title">Countries</h1>
         
-        <form id="country-radio">
+        <form id="country-radio" class="frame">
           <!-- <input type="submit" value="Filter"> -->
         </form>
       </div>
