@@ -1,0 +1,25 @@
+#continent-select {
+    border: 0;
+    background: rgb(231, 229, 229);
+    width: 125px;
+    margin-left: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#continent-selct:focus {
+    outline: none;
+}
+
+#continent-select:hover {
+    background: rgb(241, 240, 240);
+    transition: 300ms ease;
+}
+
+.continent-option {
+    padding: 5px;
+}
+
+.selector-title {
+    margin-bottom: 3px;
+}

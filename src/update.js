@@ -63,6 +63,7 @@ export const update = (data, time) => {
     .attr("x", d => { return x(d.income) + (Math.sqrt(area(d.population) / (1.5 * Math.PI))); })
     .attr("font-size", "14px")
     .attr("font-weight", "bold")
+    .attr("fill", "rgb(170, 170, 170)")
     .text(d => { return d.country; });
 
   timeLabel.text(+(time + 1800));

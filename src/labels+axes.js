@@ -10,6 +10,7 @@ const xLabel = g.append("text")
   .attr("font-size", "20px")
   .attr("text-anchor", "middle")
   .attr("font-weight", "600")
+  // .attr("fill", "rgb(170, 170, 170)")
   .text("GDP Per Capita ($)");
 const yLabel = g.append("text")
   .attr("transform", "rotate(-90)")
@@ -18,13 +19,16 @@ const yLabel = g.append("text")
   .attr("font-size", "20px")
   .attr("text-anchor", "middle")
   .attr("font-weight", "600")
+  // .attr("fill", "rgb(170, 170, 170)")
   .text("Life Expectancy (Years)");
 export const timeLabel = g.append("text")
   .attr("y", height - 10)
   .attr("x", width - 45)
   .attr("font-size", "40px")
-  .attr("opacity", "0.4")
+  .attr("opacity", "0.9")
+  .attr("fill", "rgb(170, 170, 170)")
   .attr("text-anchor", "middle")
+  .attr("class", "time-label")
   .text("1800");
 
 
@@ -35,7 +39,7 @@ export const xAxisCall = d3.axisBottom(x)
   .tickValues([400, 4000, 40000])
   .tickFormat(d3.format("$"));
 g.append("g")
-  .attr("class", "x axis")
+  .attr("class", "x-axis")
   .attr("transform", "translate(0, " + height + ")")
   .call(xAxisCall);
 

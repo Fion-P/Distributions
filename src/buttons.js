@@ -30,7 +30,8 @@ export const play = (data) => {
 };
 
 const step = (data) => {
-  i = (i < 214) ? i + 1 : 214;
+  // i = (i < 214) ? i + 1 : 214;
+  i = (i < 214) ? i + 1 : 0;
   update(data[i], i);
 };
 
@@ -113,12 +114,13 @@ export const createCheckBoxes = (countries) => {
     x.setAttribute("type", "checkbox");
     x.setAttribute("name", `countries-check`);
     x.setAttribute("value", `${country}`);
+    x.setAttribute("class", "input-checkbox");
     // console.log(x);
     // box.appendChild(x);
     // label.appendChild(box);
     // label.innerHTML += "<span class='box-label'>" + country + "</span>";
     box.appendChild(x);
-    
+
     container.appendChild(box);
     container.appendChild(label);
     checkBoxForm.appendChild(container);
@@ -191,8 +193,10 @@ output.innerHTML = rangeslider.value;
 export const sliderListener = data => {
 
   rangeslider.addEventListener('input', () => {
+    clearInterval(interval);
+    playButton.textContent = "Play";
     output.innerHTML = rangeslider.value
-    console.log(rangeslider.value)
+    // console.log(rangeslider.value)
     i = rangeslider.value - 1800;
     update(data[i], i)
   })

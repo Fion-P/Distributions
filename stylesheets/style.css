@@ -15,10 +15,6 @@
     padding-left: 25px;
 }
 
-/* #country-radio::-webkit-scrollbar {
-    -webkit-appearance: none;
-} */
-
 .checkboxes {
     /* width: 45%; */
     margin: 0;
@@ -107,33 +103,28 @@
     border-radius: 8px; 
 } 
 
-#continent-select {
-    /* display: block; */
-    border: 0;
-    background: rgb(231, 229, 229);
-    width: 125px;
-    margin-left: 25px;
-    height: 25px;
-    /* padding: 10px; */
+/* .x-axis, .y-axis {
+    stroke: rgb(170, 170, 170);
+    font-weight: 100;
+    font-size: 11px;
+}
+
+.x-axis line {
+    stroke: rgb(170, 170, 170)
+}
+
+.x-axis path {
+    stroke: rgb(170, 170, 170)
+}
+
+.y-axis line {
+    stroke: rgb(170, 170, 170)
+}
+
+.y-axis path {
+    stroke: rgb(170, 170, 170)
+} */
+
+.input-checkbox {
     cursor: pointer;
 }
-
-#continent-selct:focus {
-    outline: none;
-}
-
-#continent-select:hover {
-    background: rgb(241, 240, 240);
-    transition: 300ms ease;
-}
-
-.continent-option {
-    padding: 5px;
-}
-
-.selector-title {
-    margin-bottom: 3px;
-}
-
-
-
