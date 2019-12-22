@@ -13,7 +13,7 @@ Distributions is an interactive data visualization based off of Hans Rosling's T
  
 ## Feature Highlights
 
-### D3 Tips and Date Slider
+### D3 Tips
 <!-- ![drags](https://i.pinimg.com/originals/ba/a0/a9/baa0a9f9520475e3fef4b3d30d1bf001.gif) -->
 ![tips](d3tip2.png)
   * D3 tips are used so that users can see the information.
