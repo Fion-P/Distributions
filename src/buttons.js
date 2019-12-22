@@ -27,6 +27,8 @@ export const play = (data) => {
 const step = (data) => {
   // i = (i < 214) ? i + 1 : 214;
   i = (i < 214) ? i + 1 : 0;
+  rangeslider.value = 1800 + i;
+  output.innerHTML = rangeslider.value;
   update(data[i], i);
 };
 
