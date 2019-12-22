@@ -92,4 +92,10 @@ hr {
 
 input, select {
     vertical-align:middle;
+    
 }
+
+select:focus, button:focus {
+    outline: none;
+}
+

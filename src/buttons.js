@@ -1,4 +1,5 @@
 import { update } from './update.js';
+import { tip } from './tooltip.js';
 
 let selectedCountries;
 let i = 0;
@@ -154,7 +155,6 @@ export const checkCountry = (data) => {
 
     if (selectedCountries.length === 0) {
       checked = false;
-      console.log("hit")
       return true;
     } else {
       checked = true;
