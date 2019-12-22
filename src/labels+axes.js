@@ -41,6 +41,7 @@ export const xAxisCall = d3.axisBottom(x)
 g.append("g")
   .attr("class", "x-axis")
   .attr("transform", "translate(0, " + height + ")")
+  .attr("stroke-width", "1.5px")
   .call(xAxisCall);
 
 // Y Axis
@@ -49,6 +50,7 @@ export const yAxisCall = d3.axisLeft(y)
   .tickFormat(d => { return + d; });
 g.append("g")
   .attr("class", "y-axis")
+  .attr("stroke-width", "1.5px")
   .call(yAxisCall);
 
 
@@ -57,7 +59,7 @@ g.append("g")
 const line = g.append("line")
   .attr("x1", width)
   .attr("y1", 0)
-  .attr("x2", 0.5)
-  .attr("y2", height - 0.5)
+  .attr("x2", 1)
+  .attr("y2", height - 1)
   .attr("stroke", "#E0DEDE")
   .attr("stroke-width", "1px");

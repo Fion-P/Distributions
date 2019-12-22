@@ -1,19 +1,14 @@
-// import { step } from './visual';
 import { update } from './update.js';
-// import { formattedData } from './visual.js'
-let selectedCountries;
-// console.log(formattedData);
 
+let selectedCountries;
 let i = 0;
+let interval;
 
 // ================================= Play ======================================
-
-let interval;
 
 const playButton = document.getElementById("play-button");
 
 export const play = (data) => {
-
 
   playButton.addEventListener("click", (e) => {
 
@@ -47,7 +42,7 @@ export const select = (data) => {
 
   data = data.filter(d => {
     if (continent === "all") {
-      selected = false
+      selected = false;
       return true;
     } else {
       selected = true;
@@ -62,9 +57,7 @@ export const updateSelect = (data) => {
   selector.addEventListener("change", () => {
     selectedCountries = [];
     clearBoxes();
-    update(data[i], i);
-
-    
+    update(data[i], i);    
   });
 };
 
@@ -78,10 +71,6 @@ export const reset = (data) => {
     i = 0;
     playButton.textContent = "Play";
     clearInterval(interval);
-    // countrySelector.value= "all";
-    // selectedCountries = [];
-    // selector.value = "all";
-    // clearBoxes();
     rangeslider.value = 1800;
     output.innerHTML = rangeslider.value;
     update(data[0], 0);
@@ -89,6 +78,23 @@ export const reset = (data) => {
 
 };
 
+// ============================== Slider ==================================
+
+let rangeslider = document.getElementById("sliderRange");
+let output = document.getElementById("demo");
+
+output.innerHTML = rangeslider.value;
+
+export const sliderListener = data => {
+
+  rangeslider.addEventListener('input', () => {
+    clearInterval(interval);
+    playButton.textContent = "Play";
+    output.innerHTML = rangeslider.value;
+    i = rangeslider.value - 1800;
+    update(data[i], i);
+  });
+};
 
 // ============================== Check Boxes ==================================
 
@@ -108,17 +114,12 @@ export const createCheckBoxes = (countries) => {
     let box = document.createElement("span");
     box.setAttribute("class", "each-box");
 
-    // let label = document.createElement("label");
-
     x = document.createElement("input");
     x.setAttribute("type", "checkbox");
     x.setAttribute("name", `countries-check`);
     x.setAttribute("value", `${country}`);
     x.setAttribute("class", "input-checkbox");
-    // console.log(x);
-    // box.appendChild(x);
-    // label.appendChild(box);
-    // label.innerHTML += "<span class='box-label'>" + country + "</span>";
+
     box.appendChild(x);
 
     container.appendChild(box);
@@ -179,25 +180,5 @@ export const checkListener = data => {
       selector.value = "all";
       update(data[i], i);
     })
-  })
-}
-
-// ============================== Slider ==================================
-
-
-let rangeslider = document.getElementById("sliderRange");
-let output = document.getElementById("demo");
-
-output.innerHTML = rangeslider.value;
-
-export const sliderListener = data => {
-
-  rangeslider.addEventListener('input', () => {
-    clearInterval(interval);
-    playButton.textContent = "Play";
-    output.innerHTML = rangeslider.value
-    // console.log(rangeslider.value)
-    i = rangeslider.value - 1800;
-    update(data[i], i)
   })
 }

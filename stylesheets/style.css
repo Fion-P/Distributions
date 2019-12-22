@@ -9,7 +9,7 @@
     /* max-width: 20%; */
     margin: 0;
     /* padding-right: 10px; */
-    /* height: 450px; */
+    /* height: 450px; */ 
     height: 413px;
     overflow-y: scroll;
     padding-left: 25px;
@@ -22,15 +22,28 @@
     padding-bottom: 2px;
 }
 
+.checkboxes:first-child {
+    padding-top: 8px;
+}
+
 .radio-chart {
     width: 20%;
     margin: 0;
     padding-right: 10px;
-    padding-top: 40px;
+    /* padding-top: 40px; */
+    padding-top: 53px;
 }
 
 .chart-container {
     display: flex;
+}
+
+.selector-title {
+    margin-bottom: 4px;
+}
+
+.continent-option {
+    font-size: 25px;
 }
 
 .checkbox-title, .selector-title {
@@ -81,29 +94,43 @@
 
 .frame::-webkit-scrollbar {
     -webkit-appearance: none;
+    cursor: pointer;
 }
 
 .frame::-webkit-scrollbar:vertical {
     width: 11px;
+    cursor: pointer;
 }
 
 .frame::-webkit-scrollbar:horizontal {
-    height: 11px;
+    height: 15px;
+    cursor: pointer;
 }
 
 .frame::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    border: 2px solid white; /* should match background, can't be transparent */
-    background-color: rgb(231, 229, 229);
+    /* border: 2px solid white; should match background, can't be transparent */
+    background-color: #A7A1A1;
     opacity: 0.5;
+    cursor: pointer;
+}
+
+.frame::-webkit-scrollbar-thumb:hover {
+  background: rgb(209, 203, 203);
+  cursor: pointer;
 }
 
 .frame::-webkit-scrollbar-track { 
-    background-color: #fff; 
+    /* background-color: #fff;  */
+    background-color: #F1F0F0;
     border-radius: 8px; 
 } 
-
 
 .input-checkbox {
     cursor: pointer;
 }
+
+.custom-select {
+    padding: 1px 0 10px 0;
+}
+

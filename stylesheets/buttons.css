@@ -35,6 +35,7 @@
 
     opacity: 0.8;
     background: rgb(241, 240, 240);
+    color: #A7A1A1;
     -webkit-animation-name: hvr-buzz;
     animation-name: hvr-buzz;
     -webkit-animation-duration: 0.15s;
