@@ -94,7 +94,7 @@
 .frame::-webkit-scrollbar-thumb {
     border-radius: 8px;
     border: 2px solid white; /* should match background, can't be transparent */
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgb(231, 229, 229);
     opacity: 0.5;
 }
 
@@ -103,27 +103,6 @@
     border-radius: 8px; 
 } 
 
-/* .x-axis, .y-axis {
-    stroke: rgb(170, 170, 170);
-    font-weight: 100;
-    font-size: 11px;
-}
-
-.x-axis line {
-    stroke: rgb(170, 170, 170)
-}
-
-.x-axis path {
-    stroke: rgb(170, 170, 170)
-}
-
-.y-axis line {
-    stroke: rgb(170, 170, 170)
-}
-
-.y-axis path {
-    stroke: rgb(170, 170, 170)
-} */
 
 .input-checkbox {
     cursor: pointer;

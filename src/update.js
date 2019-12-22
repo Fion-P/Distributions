@@ -5,6 +5,10 @@ import { tip } from './tooltip.js';
 import { select, checkCountry } from './buttons.js';
 // import { formattedData } from './visual.js'
 
+const labelColor = d3.scaleOrdinal()
+  .domain(["europe", "asia", "americas", "africa"])
+  .range(["#4e0016", "#294041", "rgb(156, 112, 74)", "#557057"]);
+
 export const update = (data, time) => {
   const t = d3.transition().duration(100);
 
@@ -28,13 +32,13 @@ export const update = (data, time) => {
       .on("mouseout", tip.hide)
       .merge(circles)
       .transition(t)
-        .attr("fill", function (d) { return continentColor(d.continent); })
+        .attr("fill", (d) => { return continentColor(d.continent); })
         .attr("cy", d => { return y(d.life_exp); })
         .attr("cx", d => { return x(d.income); })
         .attr("r", d => {
           return Math.sqrt(area(d.population) / Math.PI);
         })
-        .attr("stroke", "rgb(231, 229, 229)")
+        .attr("stroke", (d) => { return labelColor(d.continent); })
         .attr("stroke-width", "1px")
         .attr("opacity", "0.8");
 
@@ -63,7 +67,7 @@ export const update = (data, time) => {
     .attr("x", d => { return x(d.income) + (Math.sqrt(area(d.population) / (1.5 * Math.PI))); })
     .attr("font-size", "14px")
     .attr("font-weight", "bold")
-    .attr("fill", "rgb(170, 170, 170)")
+    .attr("fill", (d) => { return labelColor(d.continent); })
     .text(d => { return d.country; });
 
   timeLabel.text(+(time + 1800));
