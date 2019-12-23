@@ -27,7 +27,7 @@ In this version users are able to interact with the chart. At the top there are 
 ## Feature Highlights
 
 ### D3 Tips
-###### [Next Feature](#d3-tips)
+###### [Next Feature](#displaying-data-by-year)
 <!-- ![drags](https://i.pinimg.com/originals/ba/a0/a9/baa0a9f9520475e3fef4b3d30d1bf001.gif) -->
 ![tips](https://i.pinimg.com/originals/33/02/92/3302922aec0d65305773b4d24538ca51.gif)
   * D3 tips are used so that users can see the information.
@@ -35,7 +35,7 @@ In this version users are able to interact with the chart. At the top there are 
   * Tips don't appear unless the mouse is on the bubble so that the data does not get congested.
   
 ### Displaying Data by Year
-###### [Next Feature](#displaying-data-by-year)
+###### [Next Feature](#filters-and-buttons)
 ```javascript
    const circles = g.selectAll("circle")
     .data(data, d => {
@@ -65,7 +65,7 @@ In this version users are able to interact with the chart. At the top there are 
  * Utilizes transition after the merge to allow for smooth visuals as the data changes.
 
 ### Filters and Buttons
-###### [Next Feature](#filters-and-buttons)
+###### [Next Feature](#date-slider)
 ![selects](https://i.pinimg.com/originals/67/75/3b/67753b3cf7a5d4f6f052bf9fc9814258.gif)
 
   * Selectors are used to let users change the region displayed. 
