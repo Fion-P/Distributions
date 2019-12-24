@@ -31,7 +31,7 @@
 .header-content {
   width: 100%;
   background: #F1F0F0;
-  height: 60px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,14 +49,14 @@
 }
 
 .dev-links {
-  font-size: 30px;
+  font-size: 25px;
   color: rgb(136, 109, 109);
   /* padding-left: 10px; */
 }
 
 .dev-links:hover {
   color: rgb(175, 151, 151);
-  font-size: 35px;
+  font-size: 30px;
   transition: 300ms ease;
 }
 
@@ -67,5 +67,5 @@
 
 .title h1 {
   color:  rgb(131, 115, 115);
-  font-size: 35px;
+  font-size: 30px;
 }
