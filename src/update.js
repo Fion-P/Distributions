@@ -1,8 +1,9 @@
 import { g } from './chart-area.js';
-import { x, y, area, continentColor } from './scales.js';
+import { x, y, area, continentColor, africaColor, asiaColor, europeColor, americaColor } from './scales.js';
 import { timeLabel, xAxisCall, yAxisCall } from './labels+axes.js';
 import { tip } from './tooltip.js';
 import { select, checkCountry } from './buttons.js';
+import { createContLegend, contLegend } from './continent_legends.js';
 // import { formattedData } from './visual.js'
 
 const labelColor = d3.scaleOrdinal()
@@ -18,6 +19,38 @@ export const update = (data, time) => {
 
   let checked = checkCountry(data)[1];
   let selected = select(data)[1];
+  let continent = select(data)[2];
+
+  // contLegend.remove();
+  
+ 
+  contLegend;
+  createContLegend(continent);
+
+
+  let color = (
+    d => { return continentColor(d.continent);}
+  );
+
+  if (selected && (continent === "africa")) {
+    color = (
+      d => { return africaColor(d.country); }
+    );
+  } else if (selected && (continent === "asia")) {
+    color = (
+      d => { return asiaColor(d.country); }
+    );
+  } else if (selected && (continent === "europe")) {
+    color = (
+      d => { return europeColor(d.country); }
+    );
+  } else if (selected && (continent === "americas")) {
+    color = (
+      d => { return americaColor(d.country); }
+    );
+  }
+
+
 
   const circles = g.selectAll("circle")
     .data(data, d => {
@@ -32,7 +65,8 @@ export const update = (data, time) => {
       .on("mouseout", tip.hide)
       .merge(circles)
       .transition(t)
-        .attr("fill", (d) => { return continentColor(d.continent); })
+        // .attr("fill", (d) => { return continentColor(d.continent); })
+        .attr("fill", color)
         .attr("cy", d => { return y(d.life_exp); })
         .attr("cx", d => { return x(d.income); })
         .attr("r", d => {

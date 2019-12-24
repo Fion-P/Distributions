@@ -53,7 +53,7 @@ export const select = (data) => {
     }
   });
 
-  return [data, selected];
+  return [data, selected, continent];
 };
 
 export const updateSelect = (data) => {

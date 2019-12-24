@@ -21,13 +21,13 @@
 
 #play-button, #clear-checks, #reset-button {
     border-radius: 3px;
-    background-color:  rgb(231, 229, 229);
+    background-color: rgb(231, 229, 229);
     border: none;
     cursor: pointer;
-    width: 90px;
+    width: 80px;
     /* height: 25px; */
     padding: 10px 0 10px 0;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 600;
 }
 

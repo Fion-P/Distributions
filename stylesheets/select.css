@@ -1,11 +1,12 @@
 #continent-select {
     border: 0;
     background: rgb(231, 229, 229);
-    width: 190px;
-    margin-left: 25px;
-    height: 25px;
+    /* width: 181px; */
+    width: 84%;
+    margin-left: 15%;
+    height: 23px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 11px;
 }
 
 #continent-selct:focus {
