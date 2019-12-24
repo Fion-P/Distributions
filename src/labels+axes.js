@@ -5,7 +5,7 @@ import { width, height } from './chart-area.js';
 // ============================= Labels ===================================
 
 const xLabel = g.append("text")
-  .attr("y", height + 45)
+  .attr("y", height + 40)
   .attr("x", width / 2)
   .attr("font-size", "17px")
   .attr("text-anchor", "middle")
