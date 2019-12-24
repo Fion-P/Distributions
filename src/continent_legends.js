@@ -66,6 +66,8 @@ export const createContLegend = (continent) => {
   }
 
   let countries = all[continent];
+
+  countries.sort();
   
   countries.forEach((country, i) => {
 

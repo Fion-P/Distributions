@@ -49,14 +49,7 @@ export const Visual = () => {
     });
     
     countries.sort();
-    
-    let africa = [];
-    formattedData[0].forEach( row => {
-      if (row.continent === "europe") {
-        africa.push(row.country);
-      }
-    });
-    console.log(africa);
+  
 
     createCheckBoxes(countries);
     checkListener(formattedData);

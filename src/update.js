@@ -23,7 +23,6 @@ export const update = (data, time) => {
 
   // contLegend.remove();
   
- 
   contLegend;
   createContLegend(continent);
 
