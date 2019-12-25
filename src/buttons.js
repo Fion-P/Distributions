@@ -184,6 +184,8 @@ export const clearAllChecks = data => {
     selectedCountries = [];
     selector.value = "all";
     clearBoxes();
+    playButton.textContent = "Play";
+    clearInterval(interval);
     update(data[i], i);
   })
 }
