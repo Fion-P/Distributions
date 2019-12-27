@@ -87,7 +87,7 @@ export const createContLegend = (continent) => {
       .attr("width", 7)
       .attr("height", 7)
 
-    console.log(continent);
+    // console.log(continent);
     if (continent === "asia") {
       legendRow.attr("fill", asiaColor(country));
     } else if (continent === "europe") {
