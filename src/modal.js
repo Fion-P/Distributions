@@ -9,19 +9,26 @@ export const modalFunction = () => {
   const span = document.getElementsByClassName("close")[0];
 
   // When the user clicks on the button, open the modal
-  btn.onclick = function () {
+  btn.addEventListener("click", (event) => {
     modal.style.display = "block";
-  }
+  });
 
   // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
+  span.addEventListener('click', event => {
     modal.style.display = "none";
-  }
+  });
 
   // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
+  window.addEventListener('click', event => {
+    if (event.target === modal) {
       modal.style.display = "none";
     }
-  }
-}
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.keyCode === 27) {
+      modal.style.display = "none";
+    }
+  });
+};
+

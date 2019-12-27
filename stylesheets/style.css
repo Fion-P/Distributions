@@ -1,3 +1,15 @@
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
 #chart-area svg {
 	margin-left: auto;
     margin-right: auto;
@@ -68,6 +80,8 @@
 
 .chart-body {
   padding-top: 20px;
+  /* animation-name: fadeIn;
+  animation-duration: 1s; */
 }
 
 .chart-container {

@@ -18,6 +18,27 @@
   }
 }
 
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(1px) rotate(2deg);
+    transform: translateX(1px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-1px) rotate(-2deg);
+    transform: translateX(-1px) rotate(-2deg);
+  }
+}
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(1px) rotate(2deg);
+    transform: translateX(1px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-1px) rotate(-2deg);
+    transform: translateX(-1px) rotate(-2deg);
+  }
+}
+
 .modal {
   display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -42,7 +63,7 @@
   border-radius: 3px;
   opacity: 0.95;
   animation-name: fadeInDown;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 }
 
 /* The Close Button */
@@ -58,9 +79,22 @@
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: rgb(231, 229, 229);
   text-decoration: none;
   cursor: pointer;
+}
+
+.close:hover {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  /* color: rgb(250, 62, 62); */
+  transition: 300ms ease;
 }
 
 .description-label, 
