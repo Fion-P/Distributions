@@ -130,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _visual_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./visual.js */ \"./src/visual.js\");\nconsole.log(\"webpack is working\")\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  Object(_visual_js__WEBPACK_IMPORTED_MODULE_0__[\"Visual\"])();\n});\n \n\n//working\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _visual_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./visual.js */ \"./src/visual.js\");\n/* harmony import */ var _modal_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal.js */ \"./src/modal.js\");\nconsole.log(\"webpack is working\")\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  Object(_visual_js__WEBPACK_IMPORTED_MODULE_0__[\"Visual\"])();\n\n  Object(_modal_js__WEBPACK_IMPORTED_MODULE_1__[\"modalFunction\"])();\n});\n \n\n//working\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -155,6 +155,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"legend\", function() { return legend; });\n/* harmony import */ var _chart_area_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chart-area.js */ \"./src/chart-area.js\");\n/* harmony import */ var _scales_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scales.js */ \"./src/scales.js\");\n\n\n\n\nconst continents = [\"europe\", \"asia\", \"americas\", \"africa\"];\n\nconst legend = _chart_area_js__WEBPACK_IMPORTED_MODULE_0__[\"g\"].append(\"g\")\n  .attr(\"transform\", \"translate(\" + (_chart_area_js__WEBPACK_IMPORTED_MODULE_0__[\"width\"] - 15) + \",\" + (_chart_area_js__WEBPACK_IMPORTED_MODULE_0__[\"height\"] - 125) + \")\");\n// shift to bottom of visualization\n\ncontinents.forEach((continent, i) => {\n  let legendRow = legend.append(\"g\")\n    .attr(\"transform\", \"translate(0,\" + (i * 20) + \")\");\n  // using the index \"i\" so that each row are seperated by 20px in the y direction\n  // create the squares of colors\n  legendRow.append(\"rect\")\n    .attr(\"width\", 10)\n    .attr(\"height\", 10)\n    .attr(\"fill\", Object(_scales_js__WEBPACK_IMPORTED_MODULE_1__[\"continentColor\"])(continent));\n\n  // create the labels\n  legendRow.append(\"text\")\n    .attr(\"x\", -10)\n    // puts the texts -10px aka 10px to the left\n    .attr(\"y\", 10)\n    // y-val of 10 so that the texts lines up vertically\n    .attr(\"text-anchor\", \"end\")\n    // text anchor end so text gets appended from the end of the texts\n    .style(\"text-transform\", \"capitalize\")\n    // fomrats the texts \n    .text(continent);\n\n});\n\n//# sourceURL=webpack:///./src/legend.js?");
+
+/***/ }),
+
+/***/ "./src/modal.js":
+/*!**********************!*\
+  !*** ./src/modal.js ***!
+  \**********************/
+/*! exports provided: modalFunction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"modalFunction\", function() { return modalFunction; });\nconst modalFunction = () => {\n  // Get the modal\n  const modal = document.getElementById(\"myModal\");\n\n  // Get the button that opens the modal\n  const btn = document.getElementById(\"myBtn\");\n\n  // Get the <span> element that closes the modal\n  const span = document.getElementsByClassName(\"close\")[0];\n\n  // When the user clicks on the button, open the modal\n  btn.onclick = function () {\n    modal.style.display = \"block\";\n  }\n\n  // When the user clicks on <span> (x), close the modal\n  span.onclick = function () {\n    modal.style.display = \"none\";\n  }\n\n  // When the user clicks anywhere outside of the modal, close it\n  window.onclick = function (event) {\n    if (event.target == modal) {\n      modal.style.display = \"none\";\n    }\n  }\n}\n\n\n//# sourceURL=webpack:///./src/modal.js?");
 
 /***/ }),
 

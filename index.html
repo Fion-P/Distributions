@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="stylesheets/select.css">
   <link rel="stylesheet" href="stylesheets/range.css">
   <link rel="stylesheet" href="stylesheets/header.css">
+  <link rel="stylesheet" href="stylesheets/modal.css">
 
   <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -44,12 +45,25 @@
           </div>
         </div>
     </div>
+    <!-- Trigger/Open The Modal -->
+    <!-- <button id="myBtn">Open Modal</button> -->
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+    
+    </div>
   
   <div class="chart-body"> 
     
     <div class="chart-container">
       <div class="radio-chart">
-        <div class="description">
+        <div class="description" id="myBtn">
           <h1>
             This chart compares Life Expectancy versus GDP per capita of 182 nations from the years 1800 to 2013. Each bubble
             represents a country, and the size of each bubble represents the population with the color representing the region.
