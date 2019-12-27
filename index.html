@@ -54,19 +54,23 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h1>
-          This chart compares Life Expectancy versus GDP per capita of 182 nations from the years 1800 to 2014. Each bubble
-          represents a country, and the size of each bubble represents the population with the color representing the region.
-        </h1>
+        <div class="description-head">
+          <h1 class="description-label">Description</h1>
+          <div class="description-body-container">
+            <h2 class="description-body">
+              Distributions is an interactive data visualization based off of Hans Rosling's TED talk on the correlation between income and lifespan. The dataset is parsed from gapminder and is used to create this visualization where users are allowed to change the countries, change the regions, and change the years. This chart compares Life Expectancy versus GDP per capita of 182 nations from the years 1800 to 2014. Each bubble represents a country, and the size of each bubble represents the population with the color representing the region. 
+            </h2>
+          </div>
+        </div>
         <div>
-          <h1> Controls </h1>
-          <div>
-            <li> To play or pause the visualization press the play button on the top right. </li>
-            <li> Use the continents selector to narrow the data down to specific continents. </li>
-            <li> Use the countries checkboxes to choose specific countries and add labels. </li>
-            <li> Clear countries and continents filters with the clear filter button on the top right. </li>
-            <li> Use the slider to go to specific years. </li>
-            <li> Reset the visualization with the Start Over button </li>
+          <h1 class="controls-heading"> Controls </h1>
+          <div class="modal-controls">
+            <h2 class="controls-labels"> To play or pause the visualization press the play button on the top right. </h2>
+            <h2 class="controls-labels"> Use the continents selector to narrow the data down to specific continents. </h2>
+            <h2 class="controls-labels"> Use the countries checkboxes to choose specific countries and add labels. </h2>
+            <h2 class="controls-labels"> Clear countries and continents filters with the clear filter button on the top right. </h2>
+            <h2 class="controls-labels"> Use the slider to go to specific years. </h2>
+            <h2 class="controls-labels"> Reset the visualization with the Start Over button </h2>
           </div>
         </div>
         
@@ -78,6 +82,7 @@
     
     <div class="chart-container">
       <div class="radio-chart">
+        <span class="open-modal-words">Click on box to see controls.</span>
         <div class="description" id="myBtn">
           <h1>
             This chart compares Life Expectancy versus GDP per capita of 182 nations from the years 1800 to 2014. Each bubble

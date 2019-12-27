@@ -18,6 +18,7 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
     font-family: Open Sans;
+    font-weight: none;
 }
 
 body {

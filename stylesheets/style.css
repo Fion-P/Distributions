@@ -187,3 +187,7 @@
     padding: 10px;
     line-height: 1.2;
 }
+
+.description:hover {
+    cursor: pointer;
+}

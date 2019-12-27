@@ -1,5 +1,25 @@
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    -o-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0); 
+    -moz-transform: translate3d(0, -100%, 0); 
+    -webkit-transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 0.95;
+    transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); 
+    -moz-transform: translate3d(0, 0, 0); 
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
 .modal {
-  display: none; /* Hidden by default */
+  display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -14,17 +34,26 @@
 /* Modal Content/Box */
 .modal-content {
   position: fixed;
-  top: 0;
+  top: 3%;
   background-color: #fefefe;
-  width: 100%;
+  width: 50%;
+  left: 25%;
+  padding: 20px;
+  border-radius: 3px;
+  opacity: 0.95;
+  animation-name: fadeInDown;
+  animation-duration: 2s;
 }
 
 /* The Close Button */
 .close {
+  position: absolute;
   color: #aaa;
-  float: right;
+  /* float: right; */
   font-size: 28px;
   font-weight: bold;
+  top: -4px;
+  right: 5px;
 }
 
 .close:hover,
@@ -32,4 +61,47 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.description-label, 
+.controls-heading {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.controls-labels{
+  font-weight: 300;
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+
+.description-label {
+  padding-bottom: 5px;
+}
+
+.controls-heading {
+  padding-bottom: 3px;
+}
+
+.modal-controls {
+  padding-left: 3%;
+}
+
+.description-body-container {
+  padding-left: 3%;
+}
+
+.description-body {
+  font-weight: 300;
+  font-size: 14px;
+  padding-bottom: 10px;
+  line-height: 1.2;
+}
+
+.open-modal-words {
+  width: 100%;
+  font-weight: 300;
+  font-size: 11px;
+  padding-bottom: 2px;
 }
