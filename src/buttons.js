@@ -37,6 +37,7 @@ const step = (data) => {
 // ================================= Select ====================================
 
 const selector = document.getElementById("continent-select");
+const checkboxes = document.getElementsByClassName("checkboxes");
 
 export const select = (data) => {
 
@@ -60,6 +61,10 @@ export const updateSelect = (data) => {
   selector.addEventListener("change", () => {
     // selectedCountries = [];
     // checked = false;
+    Array.from(checkboxes).forEach(box => {
+      box.remove();
+    });
+    // checkboxes.remove();
     selectedCountries = [];
     // selector.value = "all";
     clearBoxes();
@@ -124,7 +129,6 @@ export const createCheckBoxes = (countries) => {
     label.setAttribute("class", "box-label");
     label.innerHTML += country;
 
-
     let box = document.createElement("span");
     box.setAttribute("class", "each-box");
 
@@ -166,7 +170,7 @@ export const checkCountry = (data) => {
   return [data, checked];
 };
 
-const allBoxes = document.getElementsByName("countries-check")
+const allBoxes = document.getElementsByName("countries-check");
 
 export const clearBoxes = () => {
   allBoxes.forEach( box => {

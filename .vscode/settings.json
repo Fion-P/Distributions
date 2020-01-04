@@ -3,4 +3,5 @@
     "esversion": 6
   },
   "jshint.lintHTML": true,
+  "liveServer.settings.port": 5501,
 }

@@ -2,7 +2,7 @@ import { g } from './chart-area.js';
 import { x, y, area, continentColor, africaColor, asiaColor, europeColor, americaColor } from './scales.js';
 import { timeLabel, xAxisCall, yAxisCall } from './labels+axes.js';
 import { tip } from './tooltip.js';
-import { select, checkCountry } from './buttons.js';
+import { select, checkCountry, createCheckBoxes } from './buttons.js';
 import { createContLegend, contLegend } from './continent_legends.js';
 // import { formattedData } from './visual.js'
 
@@ -14,6 +14,16 @@ export const update = (data, time) => {
   const t = d3.transition().duration(100);
 
   data = select(data)[0];
+
+  let countries = [];
+
+  data.forEach(r => {
+    // console.log(r)
+    countries.push(r.country);
+    // countries.push(r.country);
+  });
+  countries.sort();
+  createCheckBoxes(countries);
 
   data = checkCountry(data)[0];
 
