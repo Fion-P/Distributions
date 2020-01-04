@@ -25,10 +25,18 @@ export const update = (data, time) => {
   // countries.sort();
   // createCheckBoxes(countries);
 
-  data = checkCountry(data)[0];
-
+  
   let checked = checkCountry(data)[1];
+  
+  let allChecked = checkCountry(data)[0];
+
+  
   let selected = select(data)[1];
+  
+    if (!selected) {
+      data = checkCountry(data)[0];
+    } 
+    
   let continent = select(data)[2];
 
   // contLegend.remove();
@@ -59,8 +67,6 @@ export const update = (data, time) => {
     );
   }
 
-
-
   const circles = g.selectAll("circle")
     .data(data, d => {
       return d.country;
@@ -88,7 +94,7 @@ export const update = (data, time) => {
   let labelData 
 
   if (checked) {
-    labelData = data;
+    labelData = allChecked;
   } else {
     labelData =[];
   }

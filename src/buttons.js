@@ -40,6 +40,7 @@ const selector = document.getElementById("continent-select");
 const checkboxes = document.getElementsByClassName("checkboxes");
 const checkBoxForm = document.getElementById("country-radio");
 const checkboxesContainer = document.getElementsByClassName("checkboxes-container");
+let allBoxes;
 
 export const select = (data) => {
 
@@ -61,11 +62,7 @@ export const select = (data) => {
 
 export const updateSelect = (data) => {
   selector.addEventListener("change", () => {
-    // selectedCountries = [];
-    // checked = false;
-    console.log(checkboxesContainer);
     checkboxesContainer[0].remove();
-    // checkboxes.remove();
     selectedCountries = [];
 
     let countries = [];
@@ -86,7 +83,19 @@ export const updateSelect = (data) => {
       // countries.push(r.country);
     });
     countries.sort();
+
     createCheckBoxes(countries);
+
+    allBoxes = document.getElementsByName("countries-check");
+
+    allBoxes.forEach(box => {
+      box.addEventListener('change', () => {
+        console.log("hit");
+        // selector.value = "all";
+        update(data[i], i);
+      });
+    });
+
     clearBoxes();
     update(data[i], i);
     // clearBoxes();
@@ -194,7 +203,7 @@ export const checkCountry = (data) => {
   return [data, checked];
 };
 
-const allBoxes = document.getElementsByName("countries-check");
+// const allBoxes = document.getElementsByName("countries-check");
 
 export const clearBoxes = () => {
   allBoxes.forEach( box => {
@@ -219,10 +228,11 @@ export const clearAllChecks = data => {
 }
 
 export const checkListener = data => {
+  allBoxes = document.getElementsByName("countries-check");
   allBoxes.forEach ( box => {
     box.addEventListener('change', () => {
       selector.value = "all";
       update(data[i], i);
-    })
-  })
-}
+    });
+  });
+};
