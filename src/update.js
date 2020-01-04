@@ -15,15 +15,15 @@ export const update = (data, time) => {
 
   data = select(data)[0];
 
-  let countries = [];
+  // let countries = [];
 
-  data.forEach(r => {
-    // console.log(r)
-    countries.push(r.country);
-    // countries.push(r.country);
-  });
-  countries.sort();
-  createCheckBoxes(countries);
+  // data.forEach(r => {
+  //   // console.log(r)
+  //   countries.push(r.country);
+  //   // countries.push(r.country);
+  // });
+  // countries.sort();
+  // createCheckBoxes(countries);
 
   data = checkCountry(data)[0];
 

@@ -38,6 +38,8 @@ const step = (data) => {
 
 const selector = document.getElementById("continent-select");
 const checkboxes = document.getElementsByClassName("checkboxes");
+const checkBoxForm = document.getElementById("country-radio");
+const checkboxesContainer = document.getElementsByClassName("checkboxes-container");
 
 export const select = (data) => {
 
@@ -61,12 +63,30 @@ export const updateSelect = (data) => {
   selector.addEventListener("change", () => {
     // selectedCountries = [];
     // checked = false;
-    Array.from(checkboxes).forEach(box => {
-      box.remove();
-    });
+    console.log(checkboxesContainer);
+    checkboxesContainer[0].remove();
     // checkboxes.remove();
     selectedCountries = [];
-    // selector.value = "all";
+
+    let countries = [];
+
+    let continent = selector.value;
+
+    let selectedData = data[i].filter(d => {
+      if (continent === "all") {
+        return true;
+      } else {
+        return d.continent === continent;
+      }
+    });
+
+    selectedData.forEach(r => {
+      // console.log(r)
+      countries.push(r.country);
+      // countries.push(r.country);
+    });
+    countries.sort();
+    createCheckBoxes(countries);
     clearBoxes();
     update(data[i], i);
     // clearBoxes();
@@ -117,10 +137,12 @@ export const sliderListener = data => {
 
 // ============================== Check Boxes ==================================
 
-const checkBoxForm = document.getElementById("country-radio");
 
 export const createCheckBoxes = (countries) => {
   let x = '';
+  let checkboxContainer = document.createElement("div");
+  checkboxContainer.setAttribute("class", "checkboxes-container");
+
   countries.forEach( (country, i) => {
     let container = document.createElement("div");
     container.setAttribute("class", "checkboxes");
@@ -139,11 +161,13 @@ export const createCheckBoxes = (countries) => {
     x.setAttribute("class", "input-checkbox");
 
     box.appendChild(x);
-
+    
     container.appendChild(box);
     container.appendChild(label);
-    checkBoxForm.appendChild(container);
+
+    checkboxContainer.appendChild(container);
   });
+  checkBoxForm.appendChild(checkboxContainer);
 };
 
 export const checkCountry = (data) => {

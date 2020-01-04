@@ -51,7 +51,7 @@ export const Visual = () => {
     countries.sort();
   
 
-    // createCheckBoxes(countries);
+    createCheckBoxes(countries);
     checkListener(formattedData);
     update(formattedData[0], 0);
  
