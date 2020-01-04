@@ -90,7 +90,7 @@ export const updateSelect = (data) => {
 
     allBoxes.forEach(box => {
       box.addEventListener('change', () => {
-        console.log("hit");
+        // console.log("hit");
         // selector.value = "all";
         update(data[i], i);
       });

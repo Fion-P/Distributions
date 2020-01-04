@@ -28,14 +28,14 @@ export const update = (data, time) => {
   
   let checked = checkCountry(data)[1];
   
-  let allChecked = checkCountry(data)[0];
-
+  data = checkCountry(data)[0];
+  // let allChecked = checkCountry(data)[0];
   
   let selected = select(data)[1];
-  
-    if (!selected) {
-      data = checkCountry(data)[0];
-    } 
+
+  // if (!selected) {
+  //   data = checkCountry(data)[0];
+  // } 
     
   let continent = select(data)[2];
 
@@ -94,7 +94,8 @@ export const update = (data, time) => {
   let labelData 
 
   if (checked) {
-    labelData = allChecked;
+    // labelData = allChecked;
+    labelData = data;
   } else {
     labelData =[];
   }
